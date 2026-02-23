@@ -1,7 +1,152 @@
 ---
 - name: Configure termux
   hosts: note20
+  vars:
+    ansible_remote_tmp: /data/data/com.termux/files/home/.ansible/tmp
   tasks:
     - name: Debug variables
       ansible.builtin.debug:
         var: ansible_facts
+    - name: Update all packages
+      tags: apt
+      ansible.builtin.apt:
+        update_cache: true
+        upgrade: true
+    - name: Update all packages
+      tags: apt
+      ansible.builtin.apt:
+        name: "{{ item }}"
+      loop:
+        - aichat
+        - bk
+        - weechat
+        - direnv
+        - editorconfig-core-c
+        - just
+        - make
+        - termux-apt-repo
+        - termux-create-package
+        - sqlite
+        - nodejs-lts
+        - marksman
+        - jq
+        - golang
+        - ghc
+        - taplo
+        - tectonic
+        - texlab
+        - texlive-bin
+        - python
+        - pandoc
+        - aria2
+        - axel
+        - cloneit
+        - helix
+        - helix-grammars
+        - neovim
+        - python-pynvim
+        - vim
+        - gopass
+        - gnuplot
+        - imagemagick
+        - qalc
+        - figlet
+        - toilet
+        - chezmoi
+        - lf
+        - clifm
+        - nnn
+        - ranger
+        - vifm
+        - yazi
+        - gh
+        - git
+        - gitui
+        - lazygit
+        - tig
+        - diff-so-fancy
+        - git-delta
+        - git-extras
+        - git-lfs
+        - translate-shell
+        - ttyper
+        - croc
+        - dufs
+        - miniserve
+        - rclone
+        - fish
+        - which
+        - tmux
+        - zellij
+        - zoxide
+        - tealdeer
+        - starship
+        - rsync
+        - rnr
+        - navi
+        - ripgrep
+        - broot
+        - fzf
+        - carapace
+        - atuin
+        - mcfly
+        - bat
+        - moor
+        - moreutils
+        - termux-api
+        - oma
+        - nala
+        - iproute2
+        - gping
+        - fontconfig-utils
+        - doge
+        - q-dns-client
+        - eza
+        - tree
+        - fastfetch
+        - htop
+        - fd
+        - diskus
+        - dua
+        - duc
+        - dust
+        - gdu
+        - duf
+        - atool
+        - unrar
+        - openssh
+        - newsboat
+        - ffmpeg
+    - name: Create folder
+      tags: pip
+      ansible.builtin.file:
+        path: .pip
+        state: directory
+        mode: "0755"
+    - name: Set pip config
+      tags: pip
+      ansible.builtin.copy:
+        content: |
+          [global]
+          index-url = https://mirrors.cernet.edu.cn/pypi/web/simple/
+          [install]
+          trusted-host = mirrors.cernet.edu.cn
+        dest: .pip/pip.conf
+        mode: "0600"
+    - name: Install pip packaging
+      tags: pip
+      ansible.builtin.command: pip install packaging
+    - name: Pip packages
+      tags: pip
+      ansible.builtin.pip:
+        name: "{{ item }}"
+      loop:
+        - pipx
+    - name: Install pipx packages
+      tags: pipx
+      community.general.pipx:
+        name: "{{ item }}"
+      loop:
+        - copyparty
+        - mdformat
+        - advance-touch

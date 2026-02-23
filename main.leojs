@@ -1341,6 +1341,304 @@
             {
               "gnx": "zxc.20260223143358.1",
               "vh": "facts"
+            },
+            {
+              "gnx": "zxc.20260223183712.1",
+              "vh": "apt",
+              "children": [
+                {
+                  "gnx": "zxc.20260223184022.1",
+                  "vh": "AI"
+                },
+                {
+                  "gnx": "zxc.20260223184533.1",
+                  "vh": "book"
+                },
+                {
+                  "gnx": "zxc.20260223230801.1",
+                  "vh": "chat"
+                },
+                {
+                  "gnx": "zxc.20260223190230.1",
+                  "vh": "dev",
+                  "children": [
+                    {
+                      "gnx": "zxc.20260223194734.1",
+                      "vh": "sqlite"
+                    },
+                    {
+                      "gnx": "zxc.20260223194403.1",
+                      "vh": "nodejs"
+                    },
+                    {
+                      "gnx": "zxc.20260223193735.1",
+                      "vh": "markdown"
+                    },
+                    {
+                      "gnx": "zxc.20260223193600.1",
+                      "vh": "json"
+                    },
+                    {
+                      "gnx": "zxc.20260223191413.1",
+                      "vh": "go"
+                    },
+                    {
+                      "gnx": "zxc.20260223191227.1",
+                      "vh": "haskell"
+                    },
+                    {
+                      "gnx": "zxc.20260223195211.1",
+                      "vh": "toml"
+                    },
+                    {
+                      "gnx": "zxc.20260223195242.1",
+                      "vh": "latex"
+                    },
+                    {
+                      "gnx": "zxc.20260223194458.1",
+                      "vh": "python"
+                    }
+                  ]
+                },
+                {
+                  "gnx": "zxc.20260223194442.1",
+                  "vh": "document"
+                },
+                {
+                  "gnx": "zxc.20260223184035.1",
+                  "vh": "download"
+                },
+                {
+                  "gnx": "zxc.20260223191650.1",
+                  "vh": "editor"
+                },
+                {
+                  "gnx": "zxc.20260223191428.1",
+                  "vh": "encrypt"
+                },
+                {
+                  "gnx": "zxc.20260223191352.1",
+                  "vh": "image",
+                  "children": [
+                    {
+                      "gnx": "zxc.20260223193511.1",
+                      "vh": "edit"
+                    }
+                  ]
+                },
+                {
+                  "gnx": "zxc.20260223194614.1",
+                  "vh": "math"
+                },
+                {
+                  "gnx": "zxc.20260223190525.1",
+                  "vh": "fan"
+                },
+                {
+                  "gnx": "zxc.20260223230624.1",
+                  "vh": "dotfiles"
+                },
+                {
+                  "gnx": "zxc.20260223183940.1",
+                  "vh": "file manager"
+                },
+                {
+                  "gnx": "zxc.20260223190212.1",
+                  "vh": "git",
+                  "children": [
+                    {
+                      "gnx": "zxc.20260223191333.1",
+                      "vh": "tui"
+                    },
+                    {
+                      "gnx": "zxc.20260223190214.1",
+                      "vh": "diff"
+                    },
+                    {
+                      "gnx": "zxc.20260223191310.1",
+                      "vh": "utils"
+                    },
+                    {
+                      "gnx": "zxc.20260223191323.1",
+                      "vh": "lfs"
+                    }
+                  ]
+                },
+                {
+                  "gnx": "zxc.20260223195543.1",
+                  "vh": "translate"
+                },
+                {
+                  "gnx": "zxc.20260223195612.1",
+                  "vh": "typing"
+                },
+                {
+                  "gnx": "zxc.20260223190157.1",
+                  "vh": "share"
+                },
+                {
+                  "gnx": "zxc.20260223184131.1",
+                  "vh": "shell",
+                  "children": [
+                    {
+                      "gnx": "zxc.20260223195659.1",
+                      "vh": "which"
+                    },
+                    {
+                      "gnx": "zxc.20260223195452.1",
+                      "vh": "screen"
+                    },
+                    {
+                      "gnx": "zxc.20260223195725.1",
+                      "vh": "cd"
+                    },
+                    {
+                      "gnx": "zxc.20260223195222.1",
+                      "vh": "man"
+                    },
+                    {
+                      "gnx": "zxc.20260223194746.1",
+                      "vh": "prompt"
+                    },
+                    {
+                      "gnx": "zxc.20260223194723.1",
+                      "vh": "cp"
+                    },
+                    {
+                      "gnx": "zxc.20260223194651.1",
+                      "vh": "rename"
+                    },
+                    {
+                      "gnx": "zxc.20260223193937.1",
+                      "vh": "snippet"
+                    },
+                    {
+                      "gnx": "zxc.20260223194636.1",
+                      "vh": "grep"
+                    },
+                    {
+                      "gnx": "zxc.20260223185957.1",
+                      "vh": "fuzzy"
+                    },
+                    {
+                      "gnx": "zxc.20260223190008.1",
+                      "vh": "completion"
+                    },
+                    {
+                      "gnx": "zxc.20260223184136.1",
+                      "vh": "history"
+                    },
+                    {
+                      "gnx": "zxc.20260223184355.1",
+                      "vh": "pager"
+                    },
+                    {
+                      "gnx": "zxc.20260223193925.1",
+                      "vh": "utils"
+                    }
+                  ]
+                },
+                {
+                  "gnx": "zxc.20260223184148.1",
+                  "vh": "system",
+                  "children": [
+                    {
+                      "gnx": "zxc.20260223201914.1",
+                      "vh": "package manager"
+                    },
+                    {
+                      "gnx": "zxc.20260223193528.1",
+                      "vh": "network"
+                    },
+                    {
+                      "gnx": "zxc.20260223191638.1",
+                      "vh": "ping"
+                    },
+                    {
+                      "gnx": "zxc.20260223190554.1",
+                      "vh": "font"
+                    },
+                    {
+                      "gnx": "zxc.20260223190308.1",
+                      "vh": "dns"
+                    },
+                    {
+                      "gnx": "zxc.20260223190428.1",
+                      "vh": "ls"
+                    },
+                    {
+                      "gnx": "zxc.20260223190437.1",
+                      "vh": "stats"
+                    },
+                    {
+                      "gnx": "zxc.20260223193457.1",
+                      "vh": "top"
+                    },
+                    {
+                      "gnx": "zxc.20260223190453.1",
+                      "vh": "find"
+                    },
+                    {
+                      "gnx": "zxc.20260223190245.1",
+                      "vh": "du"
+                    },
+                    {
+                      "gnx": "zxc.20260223190340.1",
+                      "vh": "df"
+                    },
+                    {
+                      "gnx": "zxc.20260223184107.1",
+                      "vh": "archive"
+                    }
+                  ]
+                },
+                {
+                  "gnx": "zxc.20260223194421.1",
+                  "vh": "ssh"
+                },
+                {
+                  "gnx": "zxc.20260223194007.1",
+                  "vh": "rss"
+                },
+                {
+                  "gnx": "zxc.20260223190505.1",
+                  "vh": "video",
+                  "children": [
+                    {
+                      "gnx": "zxc.20260223190509.1",
+                      "vh": "edit"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "gnx": "zxc.20260223202600.1",
+              "vh": "pip",
+              "children": [
+                {
+                  "gnx": "zxc.20260223205958.1",
+                  "vh": "pipx"
+                }
+              ]
+            },
+            {
+              "gnx": "zxc.20260223210307.1",
+              "vh": "pipx",
+              "children": [
+                {
+                  "gnx": "zxc.20260223210417.1",
+                  "vh": "copyparty"
+                },
+                {
+                  "gnx": "zxc.20260223210420.1",
+                  "vh": "mdformat"
+                },
+                {
+                  "gnx": "zxc.20260223210412.1",
+                  "vh": "ad"
+                }
+              ]
             }
           ]
         }
@@ -1677,12 +1975,81 @@
     "zxc.20260221014622.1": "- fastfetch",
     "zxc.20260221014730.1": "- fastfetch",
     "zxc.20260221002017.2": "- nodejs",
-    "zxc.20260223143337.1": "---\n- name: Configure termux\n  hosts: note20\n  tasks:\n    @others",
+    "zxc.20260223143337.1": "---\n- name: Configure termux\n  hosts: note20\n  vars:\n    ansible_remote_tmp: /data/data/com.termux/files/home/.ansible/tmp\n  tasks:\n    @others",
     "zxc.20260223143358.1": "- name: Debug variables\n  ansible.builtin.debug:\n    var: ansible_facts\n",
-    "zxc.20260126204754.1": "@others",
-    "zxc.20260126221252.1": "[defaults]\n@others",
-    "zxc.20260126221509.1": "gathering = smart",
-    "zxc.20260127225658.1": "fact_caching = jsonfile\nfact_caching_connection = ~/.cache/ansible/facts",
+    "zxc.20260223183712.1": "- name: Update all packages\n  tags: apt\n  ansible.builtin.apt:\n    update_cache: true\n    upgrade: true\n- name: Update all packages\n  tags: apt\n  ansible.builtin.apt:\n    name: \"{{ item }}\"\n  loop:\n    @others",
+    "zxc.20260223184022.1": "- aichat",
+    "zxc.20260223184533.1": "- bk",
+    "zxc.20260223230801.1": "- weechat",
+    "zxc.20260223190230.1": "- direnv\n- editorconfig-core-c\n- just\n- make\n- termux-apt-repo\n- termux-create-package",
+    "zxc.20260223194734.1": "- sqlite",
+    "zxc.20260223194403.1": "- nodejs-lts",
+    "zxc.20260223193735.1": "- marksman",
+    "zxc.20260223193600.1": "- jq",
+    "zxc.20260223191413.1": "- golang",
+    "zxc.20260223191227.1": "- ghc",
+    "zxc.20260223195211.1": "- taplo",
+    "zxc.20260223195242.1": "- tectonic\n- texlab\n- texlive-bin",
+    "zxc.20260223194458.1": "- python",
+    "zxc.20260223194442.1": "- pandoc",
+    "zxc.20260223184035.1": "- aria2\n- axel\n- cloneit\n",
+    "zxc.20260223191650.1": "- helix\n- helix-grammars\n- neovim\n- python-pynvim\n- vim",
+    "zxc.20260223191428.1": "- gopass",
+    "zxc.20260223191352.1": "- gnuplot",
+    "zxc.20260223193511.1": "- imagemagick",
+    "zxc.20260223194614.1": "- qalc",
+    "zxc.20260223190525.1": "- figlet\n- toilet",
+    "zxc.20260223230624.1": "- chezmoi",
+    "zxc.20260223183940.1": "- lf\n- clifm\n- nnn\n- ranger\n- vifm\n- yazi",
+    "zxc.20260223190212.1": "- gh\n- git",
+    "zxc.20260223191333.1": "- gitui\n- lazygit\n- tig",
+    "zxc.20260223190214.1": "- diff-so-fancy\n- git-delta",
+    "zxc.20260223191310.1": "- git-extras",
+    "zxc.20260223191323.1": "- git-lfs",
+    "zxc.20260223195543.1": "- translate-shell",
+    "zxc.20260223195612.1": "- ttyper",
+    "zxc.20260223190157.1": "- croc\n- dufs\n- miniserve\n- rclone",
+    "zxc.20260223184131.1": "- fish",
+    "zxc.20260223195659.1": "- which",
+    "zxc.20260223195452.1": "- tmux\n- zellij",
+    "zxc.20260223195725.1": "- zoxide",
+    "zxc.20260223195222.1": "- tealdeer",
+    "zxc.20260223194746.1": "- starship",
+    "zxc.20260223194723.1": "- rsync",
+    "zxc.20260223194651.1": "- rnr",
+    "zxc.20260223193937.1": "- navi",
+    "zxc.20260223194636.1": "- ripgrep",
+    "zxc.20260223185957.1": "- broot\n- fzf",
+    "zxc.20260223190008.1": "- carapace",
+    "zxc.20260223184136.1": "- atuin\n- mcfly",
+    "zxc.20260223184355.1": "- bat\n- moor",
+    "zxc.20260223193925.1": "- moreutils",
+    "zxc.20260223184148.1": "- termux-api",
+    "zxc.20260223201914.1": "- oma\n- nala",
+    "zxc.20260223193528.1": "- iproute2",
+    "zxc.20260223191638.1": "- gping",
+    "zxc.20260223190554.1": "- fontconfig-utils",
+    "zxc.20260223190308.1": "- doge\n- q-dns-client",
+    "zxc.20260223190428.1": "- eza\n- tree",
+    "zxc.20260223190437.1": "- fastfetch",
+    "zxc.20260223193457.1": "- htop",
+    "zxc.20260223190453.1": "- fd",
+    "zxc.20260223190245.1": "- diskus\n- dua\n- duc\n- dust\n- gdu",
+    "zxc.20260223190340.1": "- duf",
+    "zxc.20260223184107.1": "- atool\n- unrar",
+    "zxc.20260223194421.1": "- openssh",
+    "zxc.20260223194007.1": "- newsboat",
+    "zxc.20260223190509.1": "- ffmpeg",
+    "zxc.20260223202600.1": "- name: Create folder\n  tags: pip\n  ansible.builtin.file:\n    path: .pip\n    state: directory\n    mode: \"0755\"\n- name: Set pip config\n  tags: pip\n  ansible.builtin.copy:\n    content: |\n      [global]\n      index-url = https://mirrors.cernet.edu.cn/pypi/web/simple/\n      [install]\n      trusted-host = mirrors.cernet.edu.cn\n    dest: .pip/pip.conf\n    mode: \"0600\"\n- name: Install pip packaging\n  tags: pip\n  ansible.builtin.command: pip install packaging\n- name: Pip packages\n  tags: pip\n  ansible.builtin.pip:\n    name: \"{{ item }}\"\n  loop:\n    @others",
+    "zxc.20260223205958.1": "- pipx",
+    "zxc.20260223210307.1": "- name: Install pipx packages\n  tags: pipx\n  community.general.pipx:\n    name: \"{{ item }}\"\n  loop:\n    @others",
+    "zxc.20260223210417.1": "- copyparty",
+    "zxc.20260223210420.1": "- mdformat",
+    "zxc.20260223210412.1": "- advance-touch",
+    "zxc.20260126204754.1": "@others\n",
+    "zxc.20260126221252.1": "[defaults]\n@others\n",
+    "zxc.20260126221509.1": "gathering = smart\n",
+    "zxc.20260127225658.1": "fact_caching = jsonfile\nfact_caching_connection = ~/.cache/ansible/facts\n",
     "zxc.20260126204835.1": "inventory = inventory\n",
     "zxc.20260126204904.1": "roles_path = roles\n",
     "zxc.20260126205016.1": "lookup_plugins = lookup_plugins\n",
@@ -1690,7 +2057,7 @@
     "zxc.20260126204956.1": "callback_result_format = yaml\n",
     "zxc.20260126205125.1": "callbacks_enabled = profile_tasks\n",
     "zxc.20260126221321.1": "[ssh_connection]\n@others\n",
-    "zxc.20260126221212.1": "pipelining = True"
+    "zxc.20260126221212.1": "pipelining = True\n"
   },
   "uas": {
     "zxc.20260121205603.1": {
@@ -1706,10 +2073,10 @@
       "_mod_time": 1771609655.956
     },
     "zxc.20260223143337.1": {
-      "_mod_time": 1771828462.009
+      "_mod_time": 1771859285.294
     },
     "zxc.20260126204754.1": {
-      "_mod_time": 1769530179.959
+      "_mod_time": 1771850709.354
     }
   }
 }
