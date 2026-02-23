@@ -21,6 +21,7 @@
         - weasel
         - calibre
         - winfsp # rclone
+        - steam
     - name: Uninstall choco pacakges
       tags: choco-uninstall
       chocolatey.chocolatey.win_chocolatey:
@@ -87,7 +88,7 @@
             program: "{{ path.stat.lnk_source }}\\croc.exe"
             action: allow
             direction: in
-            protocol: tcp 
+            protocol: tcp
             state: present
             enabled: true
         - name: Croc firewall rule
@@ -97,7 +98,7 @@
             program: "{{ path.stat.lnk_source }}\\croc.exe"
             action: allow
             direction: in
-            protocol: udp 
+            protocol: udp
             state: present
             enabled: true
         - name: Check current source folder
