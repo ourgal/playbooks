@@ -69,128 +69,6 @@
         type: dword
         name: Admin
         data: 0
-    - name: Windows firewall rules
-      tags: firewall
-      block:
-        - name: Facts
-          ansible.builtin.gather_facts:
-          when: ansible_facts.user_dir is not defined
-        - name: Check current source folder
-          ansible.windows.win_stat:
-            path: C:\Users\User\scoop\apps\croc\current
-          register: path
-        - name: Croc firewall rule
-          community.windows.win_firewall_rule:
-            name: croc.exe
-            localport: 9009-9013
-            program: "{{ path.stat.lnk_source }}\\croc.exe"
-            action: allow
-            direction: in
-            protocol: tcp
-            state: present
-            enabled: true
-        - name: Croc firewall rule
-          community.windows.win_firewall_rule:
-            name: croc.exe udp
-            localport: 9009-9013
-            program: "{{ path.stat.lnk_source }}\\croc.exe"
-            action: allow
-            direction: in
-            protocol: udp
-            state: present
-            enabled: true
-        - name: Check current source folder
-          ansible.windows.win_stat:
-            path: C:\Users\User\scoop\apps\deskflow\current
-          register: path
-        - name: Deskflow firewall rule
-          community.windows.win_firewall_rule:
-            name: deskflow-core.exe
-            localport: 24800-24801
-            program: "{{ path.stat.lnk_source }}\\deskflow-core.exe"
-            action: allow
-            protocol: tcp
-            direction: in
-            state: present
-            enabled: true
-        - name: Deskflow firewall rule
-          community.windows.win_firewall_rule:
-            name: deskflow-core.exe udp
-            localport: 24800-24801
-            program: "{{ path.stat.lnk_source }}\\deskflow-core.exe"
-            action: allow
-            protocol: udp
-            direction: in
-            state: present
-            enabled: true
-        - name: Check current source folder
-          ansible.windows.win_stat:
-            path: C:\Users\User\scoop\apps\aria2\current
-          register: path
-        - name: Aria2 firewall rule
-          community.windows.win_firewall_rule:
-            name: aria2c.exe
-            localport: any
-            program: "{{ path.stat.lnk_source }}\\aria2c.exe"
-            action: allow
-            protocol: tcp
-            direction: in
-            state: present
-            enabled: true
-        - name: Aria2 firewall rule
-          community.windows.win_firewall_rule:
-            name: aria2c.exe udp
-            localport: any
-            program: "{{ path.stat.lnk_source }}\\aria2c.exe"
-            action: allow
-            protocol: udp
-            direction: in
-            state: present
-            enabled: true
-        - name: Check current source folder
-          ansible.windows.win_stat:
-            path: C:\Users\User\scoop\apps\dufs\current
-          register: path
-        - name: Dufs firewall rule
-          community.windows.win_firewall_rule:
-            name: dufs.exe
-            program: "{{ path.stat.lnk_source }}\\dufs.exe"
-            action: allow
-            protocol: tcp
-            direction: in
-            state: present
-            enabled: true
-        - name: Dufs firewall rule
-          community.windows.win_firewall_rule:
-            name: dufs.exe udp
-            program: "{{ path.stat.lnk_source }}\\dufs.exe"
-            action: allow
-            protocol: udp
-            direction: in
-            state: present
-            enabled: true
-        - name: Check current source folder
-          ansible.windows.win_stat:
-            path: C:\Users\User\scoop\apps\alist\current
-          register: path
-        - name: Alist firewall rule
-          community.windows.win_firewall_rule:
-            name: alist.exe
-            program: "{{ path.stat.lnk_source }}\\alist.exe"
-            action: allow
-            protocol: tcp
-            direction: in
-            state: present
-            enabled: true
-        - name: Alist firewall rule
-          community.windows.win_firewall_rule:
-            name: alist.exe udp
-            program: "{{ path.stat.lnk_source }}\\alist.exe"
-            action: allow
-            protocol: udp
-            direction: in
-            state: present
-            enabled: true
     - name: Set user groups
       tags: user-admin
       ansible.windows.win_user:
@@ -939,3 +817,129 @@
       chocolatey.chocolatey.win_chocolatey:
         name: bluestacks
         state: latest
+- name: Configure windows admin
+  hosts: nuc-windows-admin
+  tags: admin
+  tasks:
+    - name: Windows firewall rules
+      tags: firewall
+      block:
+        - name: Facts
+          ansible.builtin.gather_facts:
+          when: ansible_facts.user_dir is not defined
+        - name: Check current source folder
+          ansible.windows.win_stat:
+            path: C:\Users\User\scoop\apps\croc\current
+          register: path
+        - name: Croc firewall rule
+          community.windows.win_firewall_rule:
+            name: croc.exe
+            localport: 9009-9013
+            program: "{{ path.stat.lnk_source }}\\croc.exe"
+            action: allow
+            direction: in
+            protocol: tcp
+            state: present
+            enabled: true
+        - name: Croc firewall rule
+          community.windows.win_firewall_rule:
+            name: croc.exe udp
+            localport: 9009-9013
+            program: "{{ path.stat.lnk_source }}\\croc.exe"
+            action: allow
+            direction: in
+            protocol: udp
+            state: present
+            enabled: true
+        - name: Check current source folder
+          ansible.windows.win_stat:
+            path: C:\Users\User\scoop\apps\deskflow\current
+          register: path
+        - name: Deskflow firewall rule
+          community.windows.win_firewall_rule:
+            name: deskflow-core.exe
+            localport: 24800-24801
+            program: "{{ path.stat.lnk_source }}\\deskflow-core.exe"
+            action: allow
+            protocol: tcp
+            direction: in
+            state: present
+            enabled: true
+        - name: Deskflow firewall rule
+          community.windows.win_firewall_rule:
+            name: deskflow-core.exe udp
+            localport: 24800-24801
+            program: "{{ path.stat.lnk_source }}\\deskflow-core.exe"
+            action: allow
+            protocol: udp
+            direction: in
+            state: present
+            enabled: true
+        - name: Check current source folder
+          ansible.windows.win_stat:
+            path: C:\Users\User\scoop\apps\aria2\current
+          register: path
+        - name: Aria2 firewall rule
+          community.windows.win_firewall_rule:
+            name: aria2c.exe
+            localport: any
+            program: "{{ path.stat.lnk_source }}\\aria2c.exe"
+            action: allow
+            protocol: tcp
+            direction: in
+            state: present
+            enabled: true
+        - name: Aria2 firewall rule
+          community.windows.win_firewall_rule:
+            name: aria2c.exe udp
+            localport: any
+            program: "{{ path.stat.lnk_source }}\\aria2c.exe"
+            action: allow
+            protocol: udp
+            direction: in
+            state: present
+            enabled: true
+        - name: Check current source folder
+          ansible.windows.win_stat:
+            path: C:\Users\User\scoop\apps\dufs\current
+          register: path
+        - name: Dufs firewall rule
+          community.windows.win_firewall_rule:
+            name: dufs.exe
+            program: "{{ path.stat.lnk_source }}\\dufs.exe"
+            action: allow
+            protocol: tcp
+            direction: in
+            state: present
+            enabled: true
+        - name: Dufs firewall rule
+          community.windows.win_firewall_rule:
+            name: dufs.exe udp
+            program: "{{ path.stat.lnk_source }}\\dufs.exe"
+            action: allow
+            protocol: udp
+            direction: in
+            state: present
+            enabled: true
+        - name: Check current source folder
+          ansible.windows.win_stat:
+            path: C:\Users\User\scoop\apps\alist\current
+          register: path
+        - name: Alist firewall rule
+          community.windows.win_firewall_rule:
+            name: alist.exe
+            program: "{{ path.stat.lnk_source }}\\alist.exe"
+            action: allow
+            protocol: tcp
+            direction: in
+            state: present
+            enabled: true
+        - name: Alist firewall rule
+          community.windows.win_firewall_rule:
+            name: alist.exe udp
+            program: "{{ path.stat.lnk_source }}\\alist.exe"
+            action: allow
+            protocol: udp
+            direction: in
+            state: present
+            enabled: true
