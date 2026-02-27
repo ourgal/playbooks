@@ -1122,6 +1122,10 @@
                     {
                       "gnx": "zxc.20260227222048.1",
                       "vh": "helix-ghost"
+                    },
+                    {
+                      "gnx": "zxc.20260227224509.1",
+                      "vh": "python"
                     }
                   ]
                 }
@@ -1970,6 +1974,7 @@
     "zxc.20260226193604.6": "- name: Check current source folder\n  ansible.windows.win_stat:\n    path: C:\\Users\\User\\scoop\\apps\\dufs\\current\n  register: path\n- name: Dufs firewall rule\n  community.windows.win_firewall_rule:\n    name: dufs.exe\n    program: \"{{ path.stat.lnk_source }}\\\\dufs.exe\"\n    action: allow\n    protocol: tcp\n    direction: in\n    state: \"{{ 'present' if path.stat.exists is true else 'absent' }}\"\n    enabled: true\n- name: Dufs firewall rule\n  community.windows.win_firewall_rule:\n    name: dufs.exe udp\n    program: \"{{ path.stat.lnk_source }}\\\\dufs.exe\"\n    action: allow\n    protocol: udp\n    direction: in\n    state: \"{{ 'present' if path.stat.exists is true else 'absent' }}\"\n    enabled: true\n",
     "zxc.20260226193604.7": "- name: Check current source folder\n  ansible.windows.win_stat:\n    path: C:\\Users\\User\\scoop\\apps\\alist\\current\n  register: path\n- name: Alist firewall rule\n  community.windows.win_firewall_rule:\n    name: alist.exe\n    program: \"{{ path.stat.lnk_source if path.stat.exists }}\\\\alist.exe\"\n    action: allow\n    protocol: tcp\n    direction: in\n    state: \"{{ 'present' if path.stat.exists is true else 'absent' }}\"\n    enabled: true\n- name: Alist firewall rule\n  community.windows.win_firewall_rule:\n    name: alist.exe udp\n    program: \"{{ path.stat.lnk_source if path.stat.exists }}\\\\alist.exe\"\n    action: allow\n    protocol: udp\n    direction: in\n    state: \"{{ 'present' if path.stat.exists is true else 'absent' }}\"\n    enabled: true\n",
     "zxc.20260227222048.1": "- name: Check helix-ghost binary file\n  ansible.windows.win_stat:\n    path: C:\\Users\\User\\.local\\bin\\helix-ghost.exe\n  register: path\n- name: Helix-ghost firewall rule\n  community.windows.win_firewall_rule:\n    name: helix-ghost.exe\n    program: \"{{ path.stat.path }}\"\n    action: allow\n    protocol: tcp\n    direction: in\n    state: \"{{ 'present' if path.stat.exists else 'absent' }}\"\n    enabled: true\n- name: Helix-ghost firewall rule\n  community.windows.win_firewall_rule:\n    name: helix-ghost.exe udp\n    program: \"{{ path.stat.path }}\"\n    action: allow\n    protocol: udp\n    direction: in\n    state: \"{{ 'present' if path.stat.exists else 'absent' }}\"\n    enabled: true\n",
+    "zxc.20260227224509.1": "- name: Check python binary file\n  ansible.windows.win_stat:\n    path: C:\\Python314\\python.exe\n  register: path\n- name: Helix-ghost firewall rule\n  community.windows.win_firewall_rule:\n    name: python.exe\n    program: \"{{ path.stat.path }}\"\n    action: allow\n    protocol: tcp\n    direction: in\n    state: \"{{ 'present' if path.stat.exists else 'absent' }}\"\n    enabled: true\n- name: Helix-ghost firewall rule\n  community.windows.win_firewall_rule:\n    name: python.exe udp\n    program: \"{{ path.stat.path }}\"\n    action: allow\n    protocol: udp\n    direction: in\n    state: \"{{ 'present' if path.stat.exists else 'absent' }}\"\n    enabled: true\n",
     "zxc.20260211203811.1": "---\n@others\n",
     "zxc.20260211203923.1": "- name: Install uos via nixos live cd\n  hosts: nixos-live\n  tasks:\n    @others\n",
     "zxc.20260211204116.1": "- name: Ansible facts\n  ansible.builtin.debug:\n    var: ansible_facts",
@@ -2098,7 +2103,7 @@
   },
   "uas": {
     "zxc.20260121205603.1": {
-      "_mod_time": 1772203396.283
+      "_mod_time": 1772203565.593
     },
     "zxc.20260211203811.1": {
       "_mod_time": 1770813702.075

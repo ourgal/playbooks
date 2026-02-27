@@ -989,3 +989,25 @@
             direction: in
             state: "{{ 'present' if path.stat.exists else 'absent' }}"
             enabled: true
+        - name: Check python binary file
+          ansible.windows.win_stat:
+            path: C:\Python314\python.exe
+          register: path
+        - name: Helix-ghost firewall rule
+          community.windows.win_firewall_rule:
+            name: python.exe
+            program: "{{ path.stat.path }}"
+            action: allow
+            protocol: tcp
+            direction: in
+            state: "{{ 'present' if path.stat.exists else 'absent' }}"
+            enabled: true
+        - name: Helix-ghost firewall rule
+          community.windows.win_firewall_rule:
+            name: python.exe udp
+            program: "{{ path.stat.path }}"
+            action: allow
+            protocol: udp
+            direction: in
+            state: "{{ 'present' if path.stat.exists else 'absent' }}"
+            enabled: true
