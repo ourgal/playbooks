@@ -686,6 +686,12 @@
         state: present
         scope: user
         elements: '%userprofile%\scoop\apps\msys2\current\mingw64\bin'
+    - name: Install pip packages
+      tags: pip-install
+      ansible.windows.win_shell: "pip install --user {{ item }}"
+      loop:
+        - pynvim
+
 - name: Configure windows game user
   hosts: nuc-windows-game
   tags: game

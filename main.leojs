@@ -1023,6 +1023,16 @@
                 {
                   "gnx": "zxc.20260217213824.1",
                   "vh": "add msys2 to Path"
+                },
+                {
+                  "gnx": "zxc.20260227205212.1",
+                  "vh": "pip",
+                  "children": [
+                    {
+                      "gnx": "zxc.20260227205247.1",
+                      "vh": "pynvim"
+                    }
+                  ]
                 }
               ]
             },
@@ -1935,6 +1945,8 @@
     "zxc.20260227204153.1": "- rahji/helix-ghost",
     "zxc.20260218030929.1": "- name: Rename binary\n  tags: eget-install\n  ansible.windows.win_copy:\n    src: \"{{ ansible_facts.user_dir }}\\\\.local\\\\bin\\\\{{ item.old }}\"\n    dest: \"{{ ansible_facts.user_dir }}\\\\.local\\\\bin\\\\{{ item.new }}\"\n    remote_src: true\n  loop:\n    - old: dockfmt\n      new: dockfmt.exe\n    - old: keep-sorted_windows.exe\n      new: keep-sorted.exe\n  when: eget_config_stat.stat.exists is true\n- name: Remove origin\n  tags: eget-install\n  ansible.windows.win_file:\n    path: \"{{ ansible_facts.user_dir }}\\\\.local\\\\bin\\\\{{ item }}\"\n    state: absent\n  when: eget_config_stat.stat.exists is true\n  loop:\n    - dockfmt\n    - keep-sorted_windows.exe\n",
     "zxc.20260217213824.1": "- name: Add msys bin path to PATH\n  tags: path\n  ansible.windows.win_path:\n    state: present\n    scope: user\n    elements: '%userprofile%\\scoop\\apps\\msys2\\current\\mingw64\\bin'\n",
+    "zxc.20260227205212.1": "- name: Install pip packages\n  tags: pip-install\n  ansible.windows.win_shell: \"pip install --user {{ item }}\"\n  loop:\n    @others\n\n",
+    "zxc.20260227205247.1": "- pynvim",
     "zxc.20260215141824.1": "- name: Configure windows game user\n  hosts: nuc-windows-game\n  tags: game\n  tasks:\n    @others\n",
     "zxc.20260215142414.1": "- name: Debug variables\n  ansible.builtin.debug:\n    var: ansible_facts\n",
     "zxc.20260215142237.2": "- name: Add aki bucket\n  community.windows.win_scoop_bucket:\n    name: aki\n    repo: https://github.com/akirco/aki-apps\n    state: present\n",
@@ -2078,7 +2090,7 @@
   },
   "uas": {
     "zxc.20260121205603.1": {
-      "_mod_time": 1772196131.412
+      "_mod_time": 1772196772.062
     },
     "zxc.20260211203811.1": {
       "_mod_time": 1770813702.075
