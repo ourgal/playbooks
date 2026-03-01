@@ -369,6 +369,7 @@
         - gallery-dl
         - yt-dlp
         - pget
+        - wget2
         - gpg
         - win-gpg-agent
         - openssl
