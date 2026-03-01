@@ -370,6 +370,7 @@
         - yt-dlp
         - pget
         - wget2
+        - wget
         - gpg
         - win-gpg-agent
         - openssl
