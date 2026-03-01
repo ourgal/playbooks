@@ -1937,7 +1937,7 @@
     "zxc.20260125122532.1": "- sfsu\n",
     "zxc.20260125122444.1": "- psfzf\n- psreadline\n",
     "zxc.20260301132135.1": "- moor",
-    "zxc.20260125122737.1": "- winspy\n- windhawk\n",
+    "zxc.20260125122737.1": "- winspy\n- windhawk\n- powertoys",
     "zxc.20260125123048.1": "- glazewm\n- zebar\n- komorebi\n- yasb\n- whkd\n",
     "zxc.20260125123009.1": "- flclash\n",
     "zxc.20260125123134.1": "- diskgenius\n- smartmontools\n- crystaldiskinfo\n- wiztree\n",
@@ -2155,7 +2155,7 @@
   },
   "uas": {
     "zxc.20260121205603.1": {
-      "_mod_time": 1772361187.422
+      "_mod_time": 1772367326.608
     },
     "zxc.20260301130922.1": {
       "_mod_time": 1772341927.149
