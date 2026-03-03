@@ -29,6 +29,7 @@
         - gimp
         - gpg4win
     - name: Install init packages via scoop
+      tags: admin-scoop-init
       community.windows.win_scoop:
         name: '{{ item }}'
         global: false
@@ -39,7 +40,9 @@
       until: result is not failed
       loop:
         - aria2
+        - git
     - name: Add bucket
+      tags: admin-scoop-buckets
       community.windows.win_scoop_bucket:
         name: "{{ item }}"
         state: present
@@ -254,6 +257,7 @@
             content: "{{ config | to_json }}"
           when: scoop_config_stat.stat.exists is false
     - name: Add bucket
+      tags: admin-scoop-buckets
       community.windows.win_scoop_bucket:
         name: "{{ item }}"
         state: present
@@ -813,6 +817,7 @@
             content: "{{ config | to_json }}"
           when: scoop_config_stat.stat.exists is false
     - name: Add bucket
+      tags: admin-scoop-buckets
       community.windows.win_scoop_bucket:
         name: "{{ item }}"
         state: present
@@ -1106,3 +1111,15 @@
         - name: Reboot
           ansible.windows.win_reboot:
           when: res.reboot_required
+    - name: Install global scoop packages
+      tags: global-scoop
+      community.windows.win_scoop:
+        name: '{{ item }}'
+        global: true
+        no_cache: true
+      register: result
+      retries: 3
+      delay: 5
+      until: result is not failed
+      loop:
+        - ldplayer

@@ -239,9 +239,6 @@
                             {
                               "gnx": "zxc.20260201025855.1",
                               "vh": "<< config >>"
-                            },
-                            {
-                              "gnx": "zxc.20260201025855.1"
                             }
                           ]
                         },
@@ -1178,6 +1175,10 @@
                 {
                   "gnx": "zxc.20260228201243.1",
                   "vh": "hostname"
+                },
+                {
+                  "gnx": "zxc.20260303203458.1",
+                  "vh": "scoop"
                 }
               ]
             }
@@ -1803,7 +1804,7 @@
     "zxc.20260131235917.6": "- name: Link to new folder\n  ansible.windows.win_shell: |\n    & cmd /c \"mklink /j \"\"{{ ansible_facts.user_dir }}\\{{ item }}\"\" \"\"D:\\{{ item }}\"\"\"\n  loop:\n    @others\n",
     "zxc.20260131235857.1": "- name: Link scoop folder\n  tags: scoop_folder\n  block:\n    - name: Create folder\n      ansible.windows.win_file:\n        path: \"{{ item }}\"\n        state: directory\n      loop:\n        - D:\\scoop_apps\n        - \"{{ ansible_facts.user_dir }}\\\\scoop\"\n    - name: Remove target folder\n      ansible.windows.win_file:\n        path: \"{{ ansible_facts.user_dir }}\\\\scoop\\\\apps\"\n        state: absent\n    - name: Create scoop folder\n      ansible.windows.win_shell: |\n        & cmd /c \"mklink /j {{ ansible_facts.user_dir }}\\scoop\\apps D:\\scoop_apps\"\n",
     "zxc.20260121215923.1": "- name: Update powershell help\n  tags: powershell-help\n  ansible.windows.win_shell: Update-help\n",
-    "zxc.20260126195012.1": "- name: Add bucket\n  community.windows.win_scoop_bucket:\n    name: \"{{ item }}\"\n    state: present\n  loop:\n    - extras\n    - nerd-fonts\n",
+    "zxc.20260126195012.1": "- name: Add bucket\n  tags: admin-scoop-buckets\n  community.windows.win_scoop_bucket:\n    name: \"{{ item }}\"\n    state: present\n  loop:\n    - extras\n    - nerd-fonts\n",
     "zxc.20260126211045.1": "- name: Add scoop-mirror bucket\n  community.windows.win_scoop_bucket:\n    name: scoop-mirror\n    repo: https://github.com/ExceptionsOccur/scoop-mirror\n",
     "zxc.20260126211045.2": "- name: Remove other bucket\n  community.windows.win_scoop_bucket:\n    name: \"{{ item }}\"\n    state: absent\n  loop:\n    - extras\n    - main\n",
     "zxc.20260126211135.1": "- name: Add scoop-cn bucket\n  community.windows.win_scoop_bucket:\n    name: scoop-cn\n    repo: https://github.com/duzyn/scoop-cn\n",
@@ -1823,7 +1824,7 @@
     "zxc.20260126014227.1": "- firefox\n- mpvio\n- visualstudio2026-workload-vctools\n- weasel\n- calibre\n- winfsp # rclone\n- steam\n- epicgameslauncher\n",
     "zxc.20260126223217.1": "- name: Uninstall choco pacakges\n  tags: choco-uninstall\n  chocolatey.chocolatey.win_chocolatey:\n    name: \"{{ item }}\"\n    state: absent\n  loop:\n    @others\n",
     "zxc.20260126223217.2": "- gimp\n- gpg4win\n",
-    "zxc.20260125024431.1": "- name: Install init packages via scoop\n  community.windows.win_scoop:\n    name: '{{ item }}'\n    global: false\n    no_cache: true\n  register: result\n  retries: 3\n  delay: 5\n  until: result is not failed\n  loop:\n    - aria2\n",
+    "zxc.20260125024431.1": "- name: Install init packages via scoop\n  tags: admin-scoop-init\n  community.windows.win_scoop:\n    name: '{{ item }}'\n    global: false\n    no_cache: true\n  register: result\n  retries: 3\n  delay: 5\n  until: result is not failed\n  loop:\n    - aria2\n    - git",
     "zxc.20260126215328.1": "- name: Enable Virtual Machine Platform\n  tags: wsl\n  ansible.windows.win_optional_feature:\n    name: VirtualMachinePlatform\n    state: present\n  register: vmp_status\n- name: Install Microsoft Subsystem for Linux\n  tags: wsl\n  ansible.windows.win_optional_feature:\n    name: Microsoft-Windows-Subsystem-Linux\n    state: present\n  register: wsl_status\n",
     "zxc.20260126215348.1": "- name: Reboot if installing Linux Subsytem as feature requires it\n  tags: wsl\n  ansible.windows.win_reboot:\n  when: wsl_status.reboot_required or vmp_status.reboot_required\n",
     "zxc.20260128212532.1": "- name: Hide admin account\n  tags: hide-admin\n  ansible.windows.win_regedit:\n    path: HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\SpecialAccounts\\UserList\n    type: dword\n    name: Admin\n    data: 0\n",
@@ -2041,6 +2042,7 @@
     "zxc.20260301000713.1": "- name: Check current source folder\n  ansible.windows.win_stat:\n    path: C:\\Users\\User\\scoop\\apps\\mpd\\current\n  register: path\n- name: Mpd firewall rule\n  community.windows.win_firewall_rule:\n    name: mpd.exe\n    program: \"{{ path.stat.lnk_source if path.stat.exists }}\\\\mpd.exe\"\n    action: allow\n    protocol: tcp\n    direction: in\n    state: \"{{ 'present' if path.stat.exists is true else 'absent' }}\"\n    enabled: true\n- name: Mpd firewall rule\n  community.windows.win_firewall_rule:\n    name: mpd.exe udp\n    program: \"{{ path.stat.lnk_source if path.stat.exists }}\\\\mpd.exe\"\n    action: allow\n    protocol: udp\n    direction: in\n    state: \"{{ 'present' if path.stat.exists is true else 'absent' }}\"\n    enabled: true\n",
     "zxc.20260301183009.1": "- name: Check current source folder\n  ansible.windows.win_stat:\n    path: C:\\Users\\User\\scoop\\apps\\kdeconnect\\current\n  register: path\n- name: Kdeconnect firewall rule\n  community.windows.win_firewall_rule:\n    name: kdeconnectd.exe\n    program: \"{{ path.stat.lnk_source if path.stat.exists }}\\\\bin\\\\kdeconnectd.exe\"\n    action: allow\n    protocol: tcp\n    direction: in\n    state: \"{{ 'present' if path.stat.exists is true else 'absent' }}\"\n    enabled: true\n- name: Kdeconnect firewall rule\n  community.windows.win_firewall_rule:\n    name: kdeconnectd.exe udp\n    program: \"{{ path.stat.lnk_source if path.stat.exists }}\\\\bin\\\\kdeconnectd.exe\"\n    action: allow\n    protocol: udp\n    direction: in\n    state: \"{{ 'present' if path.stat.exists is true else 'absent' }}\"\n    enabled: true\n",
     "zxc.20260228201243.1": "- name: Set hostname\n  tags: hostname\n  block:\n    - name: Set hostname\n      ansible.windows.win_hostname:\n        name: \"{{ my_hostname if my_hostname is defined else 'nuc' }}\"\n      register: res\n    - name: Reboot\n      ansible.windows.win_reboot:\n      when: res.reboot_required",
+    "zxc.20260303203458.1": "- name: Install global scoop packages\n  tags: global-scoop\n  community.windows.win_scoop:\n    name: '{{ item }}'\n    global: true\n    no_cache: true\n  register: result\n  retries: 3\n  delay: 5\n  until: result is not failed\n  loop:\n    - ldplayer",
     "zxc.20260301130922.1": "[global]\ntarget = \"~/.local/bin\"\ngithub_token = {{ gopass \"github/ourgal/token\" | quote }}",
     "zxc.20260211203811.1": "---\n@others\n",
     "zxc.20260211203923.1": "- name: Install uos via nixos live cd\n  hosts: nixos-live\n  tasks:\n    @others\n",
@@ -2170,7 +2172,7 @@
   },
   "uas": {
     "zxc.20260121205603.1": {
-      "_mod_time": 1772460823.185
+      "_mod_time": 1772541906.521
     },
     "zxc.20260301130922.1": {
       "_mod_time": 1772341927.149
