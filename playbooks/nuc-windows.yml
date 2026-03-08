@@ -463,11 +463,11 @@
         - autohotkey
         - autoclicker
         # - calibre
-        # windows can't set default browser to this
-        # - firefox
+        - firefox
         - brave
         - qutebrowser
         - ungoogled-chromium
+        - librewolf
         - telegram
         - sioyek
         - sumatrapdf

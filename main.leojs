@@ -1927,7 +1927,7 @@
     "zxc.20260228235922.1": "- mpd\n- mpc\n- ncmpc",
     "zxc.20260125121651.1": "- autohotkey\n- autoclicker\n",
     "zxc.20260125121707.1": "# - calibre\n",
-    "zxc.20260125121729.1": "# windows can't set default browser to this\n# - firefox\n- brave\n- qutebrowser\n- ungoogled-chromium\n",
+    "zxc.20260125121729.1": "- firefox\n- brave\n- qutebrowser\n- ungoogled-chromium\n- librewolf",
     "zxc.20260125121756.1": "- telegram\n",
     "zxc.20260125121926.1": "- sioyek\n- sumatrapdf\n- zeal\n- libreoffice\n- wpsoffice\n",
     "zxc.20260125121949.1": "- aria-ng-gui\n- eget\n- transmission\n- transgui\n",
@@ -2172,7 +2172,7 @@
   },
   "uas": {
     "zxc.20260121205603.1": {
-      "_mod_time": 1772544229.886
+      "_mod_time": 1772978110.211
     },
     "zxc.20260301130922.1": {
       "_mod_time": 1772341927.149
