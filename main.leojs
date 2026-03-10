@@ -952,16 +952,6 @@
                               "vh": "simple-completion-language-server"
                             }
                           ]
-                        },
-                        {
-                          "gnx": "zxc.20260309155645.1",
-                          "vh": "install packages ",
-                          "children": [
-                            {
-                              "gnx": "zxc.20260309155645.3",
-                              "vh": "unigetui"
-                            }
-                          ]
                         }
                       ]
                     },
@@ -1813,7 +1803,7 @@
     "zxc.20260131235917.6": "- name: Link to new folder\n  ansible.windows.win_shell: |\n    & cmd /c \"mklink /j \"\"{{ ansible_facts.user_dir }}\\{{ item }}\"\" \"\"D:\\{{ item }}\"\"\"\n  loop:\n    @others\n",
     "zxc.20260131235857.1": "- name: Link scoop folder\n  tags: scoop_folder\n  block:\n    - name: Create folder\n      ansible.windows.win_file:\n        path: \"{{ item }}\"\n        state: directory\n      loop:\n        - D:\\scoop_apps\n        - \"{{ ansible_facts.user_dir }}\\\\scoop\"\n    - name: Remove target folder\n      ansible.windows.win_file:\n        path: \"{{ ansible_facts.user_dir }}\\\\scoop\\\\apps\"\n        state: absent\n    - name: Create scoop folder\n      ansible.windows.win_shell: |\n        & cmd /c \"mklink /j {{ ansible_facts.user_dir }}\\scoop\\apps D:\\scoop_apps\"\n",
     "zxc.20260121215923.1": "- name: Update powershell help\n  tags: powershell-help\n  ansible.windows.win_shell: Update-help\n",
-    "zxc.20260126195012.1": "- name: Remove bucket\n  community.windows.win_scoop_bucket:\n    name: main\n    state: absent\n- name: Add scoop-cn bucket\n  community.windows.win_scoop_bucket:\n    name: main\n    repo: https://gh-proxy.com/https://github.com/duzyn/scoop-cn.git\n    state: present",
+    "zxc.20260126195012.1": "- name: Remove bucket\n  community.windows.win_scoop_bucket:\n    name: main\n    state: absent\n- name: Add scoop-cn bucket\n  community.windows.win_scoop_bucket:\n    name: main\n    repo: https://gh-proxy.com/https://github.com/duzyn/scoop-cn.git\n    state: present\n- name: Add main-plus bucket\n  community.windows.win_scoop_bucket:\n    name: main-plus\n    repo: https://github.com/Scoopforge/Main-Plus\n    state: present",
     "zxc.20260126211045.1": "- name: Add scoop-mirror bucket\n  community.windows.win_scoop_bucket:\n    name: scoop-mirror\n    repo: https://github.com/ExceptionsOccur/scoop-mirror\n",
     "zxc.20260126211045.2": "- name: Remove other bucket\n  community.windows.win_scoop_bucket:\n    name: \"{{ item }}\"\n    state: absent\n  loop:\n    - extras\n    - main\n",
     "zxc.20260126211135.1": "- name: Add scoop-cn bucket\n  community.windows.win_scoop_bucket:\n    name: scoop-cn\n    repo: https://github.com/duzyn/scoop-cn\n",
@@ -1924,7 +1914,7 @@
     "zxc.20260125025604.1": "- tectonic\n",
     "zxc.20260216205015.1": "- yamlfmt\n",
     "zxc.20260125025549.1": "- haskell\n- haskell-cabal\n- haskell-language-server\n- stack\n",
-    "zxc.20260214110617.1": "- rust\n- cargo-binstall\n",
+    "zxc.20260214110617.1": "- rust\n- cargo-binstall\n- cargo-update",
     "zxc.20260125025510.1": "- make\n- task\n- cmake\n",
     "zxc.20260125025534.1": "- msys2\n- direnv\n- tree-sitter\n- dirhash\n",
     "zxc.20260125025339.1": "- shellcheck\n- shfmt\n",
@@ -2004,8 +1994,6 @@
     "zxc.20260214133505.1": "- name: Add cargo bin path to PATH\n  tags: path\n  ansible.windows.win_path:\n    state: present\n    scope: user\n    elements: '%userprofile%\\.cargo\\bin'\n",
     "zxc.20260214134044.1": "- name: Install cargo packages\n  tags: cargo-install\n  ansible.windows.win_shell: \"cargo install --locked --git {{ item }}\"\n  loop:\n    @others\n",
     "zxc.20260214134128.1": "- https://github.com/estin/simple-completion-language-server.git\n",
-    "zxc.20260309155645.1": "- name: Install cargo packages\n  tags: cargo-install\n  ansible.windows.win_shell: \"cargo install {{ item }}\"\n  loop:\n    @others\n",
-    "zxc.20260309155645.3": "- cargo-update\n",
     "zxc.20260216182729.1": "- name: Install npm packages\n  tags: npm\n  ansible.windows.win_shell: npm install -g \"{{ item }}\"\n  loop:\n    @others\n",
     "zxc.20260216191851.1": "- prettier\n",
     "zxc.20260216191908.1": "- vscode-langservers-extracted\n",
@@ -2182,7 +2170,7 @@
   },
   "uas": {
     "zxc.20260121205603.1": {
-      "_mod_time": 1773126450.398
+      "_mod_time": 1773127683.716
     },
     "zxc.20260301130922.1": {
       "_mod_time": 1773102893.662

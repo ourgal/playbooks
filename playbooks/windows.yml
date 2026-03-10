@@ -49,6 +49,11 @@
         name: main
         repo: https://gh-proxy.com/https://github.com/duzyn/scoop-cn.git
         state: present
+    - name: Add main-plus bucket
+      community.windows.win_scoop_bucket:
+        name: main-plus
+        repo: https://github.com/Scoopforge/Main-Plus
+        state: present
     - name: Enable Virtual Machine Platform
       tags: wsl
       ansible.windows.win_optional_feature:
@@ -264,6 +269,11 @@
         name: main
         repo: https://gh-proxy.com/https://github.com/duzyn/scoop-cn.git
         state: present
+    - name: Add main-plus bucket
+      community.windows.win_scoop_bucket:
+        name: main-plus
+        repo: https://github.com/Scoopforge/Main-Plus
+        state: present
     - name: Update scoop
       tags: scoop-update
       block:
@@ -422,6 +432,7 @@
         - stack
         - rust
         - cargo-binstall
+        - cargo-update
         - make
         - task
         - cmake
@@ -609,11 +620,6 @@
       ansible.windows.win_shell: "cargo install --locked --git {{ item }}"
       loop:
         - https://github.com/estin/simple-completion-language-server.git
-    - name: Install cargo packages
-      tags: cargo-install
-      ansible.windows.win_shell: "cargo install {{ item }}"
-      loop:
-        - cargo-update
     - name: Install npm packages
       tags: npm
       ansible.windows.win_shell: npm install -g "{{ item }}"
@@ -829,6 +835,11 @@
       community.windows.win_scoop_bucket:
         name: main
         repo: https://gh-proxy.com/https://github.com/duzyn/scoop-cn.git
+        state: present
+    - name: Add main-plus bucket
+      community.windows.win_scoop_bucket:
+        name: main-plus
+        repo: https://github.com/Scoopforge/Main-Plus
         state: present
     - name: Add aki bucket
       community.windows.win_scoop_bucket:
