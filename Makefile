@@ -4,7 +4,7 @@ TARGETS := $(FILES:playbooks/%=%)
 .PHONY: all ${TARGETS}
 all: ${TARGETS}
 
-build: nuc-windows
+build: windows
 
 ${TARGETS}:
 	ansible-lint playbooks/$@.yml

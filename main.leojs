@@ -118,1621 +118,1627 @@
       ]
     },
     {
-      "gnx": "zxc.20260121205511.1",
-      "vh": "nuc-windows",
+      "gnx": "User.20260310143300.1",
+      "vh": "@path playbooks",
       "children": [
         {
-          "gnx": "zxc.20260121205603.1",
-          "vh": "@clean playbooks/nuc-windows.yml",
+          "gnx": "zxc.20260121205511.1",
+          "vh": "windows",
           "children": [
             {
-              "gnx": "zxc.20260125024248.1",
-              "vh": "admin part",
+              "gnx": "zxc.20260121205603.1",
+              "vh": "@clean windows.yml",
               "children": [
                 {
-                  "gnx": "zxc.20260219201707.1",
-                  "vh": "<< reboot >>"
-                },
-                {
-                  "gnx": "zxc.20260125024619.1",
-                  "vh": "facts"
-                },
-                {
-                  "gnx": "zxc.20260126013845.1",
-                  "vh": "choco",
+                  "gnx": "zxc.20260125024248.1",
+                  "vh": "admin part",
                   "children": [
                     {
-                      "gnx": "zxc.20260126223153.1",
-                      "vh": "install",
+                      "gnx": "zxc.20260219201707.1",
+                      "vh": "<< reboot >>"
+                    },
+                    {
+                      "gnx": "zxc.20260125024619.1",
+                      "vh": "facts"
+                    },
+                    {
+                      "gnx": "zxc.20260126013845.1",
+                      "vh": "choco",
                       "children": [
                         {
-                          "gnx": "zxc.20260126014227.1",
-                          "vh": "packages"
+                          "gnx": "zxc.20260126223153.1",
+                          "vh": "install",
+                          "children": [
+                            {
+                              "gnx": "zxc.20260126014227.1",
+                              "vh": "packages"
+                            }
+                          ]
+                        },
+                        {
+                          "gnx": "zxc.20260126223217.1",
+                          "vh": "uninstall",
+                          "children": [
+                            {
+                              "gnx": "zxc.20260126223217.2",
+                              "vh": "packages"
+                            }
+                          ]
                         }
                       ]
                     },
                     {
-                      "gnx": "zxc.20260126223217.1",
-                      "vh": "uninstall",
+                      "gnx": "zxc.20260125025003.1",
+                      "vh": "scoop",
                       "children": [
                         {
-                          "gnx": "zxc.20260126223217.2",
-                          "vh": "packages"
+                          "gnx": "zxc.20260125024431.1",
+                          "vh": "install scoop"
+                        },
+                        {
+                          "gnx": "zxc.20260126195012.1"
                         }
                       ]
+                    },
+                    {
+                      "gnx": "zxc.20260126215320.1",
+                      "vh": "wsl",
+                      "children": [
+                        {
+                          "gnx": "zxc.20260126215328.1",
+                          "vh": "install"
+                        },
+                        {
+                          "gnx": "zxc.20260126215348.1",
+                          "vh": "reboot"
+                        }
+                      ]
+                    },
+                    {
+                      "gnx": "zxc.20260128212532.1",
+                      "vh": "hide account"
+                    },
+                    {
+                      "gnx": "zxc.20260213005645.1",
+                      "vh": "set user groups"
+                    },
+                    {
+                      "gnx": "zxc.20260214221021.1",
+                      "vh": "start ssh-agent service"
+                    },
+                    {
+                      "gnx": "zxc.20260215005207.1",
+                      "vh": "update openssh"
+                    },
+                    {
+                      "gnx": "zxc.20260215131131.1",
+                      "vh": "optimize powershell startup time"
+                    },
+                    {
+                      "gnx": "zxc.20260215140649.1",
+                      "vh": "add game user"
                     }
                   ]
                 },
                 {
-                  "gnx": "zxc.20260125025003.1",
-                  "vh": "scoop",
+                  "gnx": "zxc.20260125024238.1",
+                  "vh": "user part",
                   "children": [
                     {
-                      "gnx": "zxc.20260125024431.1",
-                      "vh": "install scoop"
-                    },
-                    {
-                      "gnx": "zxc.20260126195012.1"
-                    }
-                  ]
-                },
-                {
-                  "gnx": "zxc.20260126215320.1",
-                  "vh": "wsl",
-                  "children": [
-                    {
-                      "gnx": "zxc.20260126215328.1",
-                      "vh": "install"
-                    },
-                    {
-                      "gnx": "zxc.20260126215348.1",
-                      "vh": "reboot"
-                    }
-                  ]
-                },
-                {
-                  "gnx": "zxc.20260128212532.1",
-                  "vh": "hide account"
-                },
-                {
-                  "gnx": "zxc.20260213005645.1",
-                  "vh": "set user groups"
-                },
-                {
-                  "gnx": "zxc.20260214221021.1",
-                  "vh": "start ssh-agent service"
-                },
-                {
-                  "gnx": "zxc.20260215005207.1",
-                  "vh": "update openssh"
-                },
-                {
-                  "gnx": "zxc.20260215131131.1",
-                  "vh": "optimize powershell startup time"
-                },
-                {
-                  "gnx": "zxc.20260215140649.1",
-                  "vh": "add game user"
-                }
-              ]
-            },
-            {
-              "gnx": "zxc.20260125024238.1",
-              "vh": "user part",
-              "children": [
-                {
-                  "gnx": "zxc.20260125123950.1",
-                  "vh": "scoop",
-                  "children": [
-                    {
-                      "gnx": "zxc.20260215141835.1",
-                      "vh": "install scoop",
+                      "gnx": "zxc.20260125123950.1",
+                      "vh": "scoop",
                       "children": [
                         {
-                          "gnx": "zxc.20260125024918.1",
-                          "vh": "install aria2 and lessmsi"
-                        },
-                        {
-                          "gnx": "zxc.20260201002237.1",
-                          "vh": "set config file",
+                          "gnx": "zxc.20260215141835.1",
+                          "vh": "install scoop",
                           "children": [
                             {
-                              "gnx": "zxc.20260201025855.1",
-                              "vh": "<< config >>"
+                              "gnx": "zxc.20260125024918.1",
+                              "vh": "install aria2 and lessmsi"
+                            },
+                            {
+                              "gnx": "zxc.20260201002237.1",
+                              "vh": "set config file",
+                              "children": [
+                                {
+                                  "gnx": "zxc.20260201025855.1",
+                                  "vh": "<< config >>"
+                                }
+                              ]
+                            },
+                            {
+                              "gnx": "zxc.20260215111207.1",
+                              "vh": "install 7zip and git"
+                            },
+                            {
+                              "gnx": "zxc.20260215111803.1",
+                              "vh": "use external 7zip",
+                              "children": [
+                                {
+                                  "gnx": "zxc.20260215111803.2",
+                                  "vh": "<< config >>"
+                                },
+                                {
+                                  "gnx": "zxc.20260215111803.2"
+                                }
+                              ]
                             }
                           ]
                         },
                         {
-                          "gnx": "zxc.20260215111207.1",
-                          "vh": "install 7zip and git"
+                          "gnx": "zxc.20260126195012.1"
                         },
                         {
-                          "gnx": "zxc.20260215111803.1",
-                          "vh": "use external 7zip",
+                          "gnx": "zxc.20260126225858.1",
+                          "vh": "scoop update"
+                        },
+                        {
+                          "gnx": "zxc.20260125025055.1",
+                          "vh": "main packages",
                           "children": [
                             {
-                              "gnx": "zxc.20260215111803.2",
-                              "vh": "<< config >>"
+                              "gnx": "zxc.20260125120148.1",
+                              "vh": "shell",
+                              "children": [
+                                {
+                                  "gnx": "zxc.20260125120941.1",
+                                  "vh": "system info"
+                                },
+                                {
+                                  "gnx": "zxc.20260125121058.1",
+                                  "vh": "which"
+                                },
+                                {
+                                  "gnx": "zxc.20260125121117.1",
+                                  "vh": "typing"
+                                },
+                                {
+                                  "gnx": "zxc.20260125120914.1",
+                                  "vh": "find"
+                                },
+                                {
+                                  "gnx": "zxc.20260125121256.1",
+                                  "vh": "less"
+                                },
+                                {
+                                  "gnx": "zxc.20260125120953.1",
+                                  "vh": "rename"
+                                },
+                                {
+                                  "gnx": "zxc.20260125121052.1",
+                                  "vh": "shasum"
+                                },
+                                {
+                                  "gnx": "zxc.20260125121014.1",
+                                  "vh": "cd"
+                                },
+                                {
+                                  "gnx": "zxc.20260125120452.1",
+                                  "vh": "utils"
+                                },
+                                {
+                                  "gnx": "zxc.20260125120924.1",
+                                  "vh": "grep"
+                                },
+                                {
+                                  "gnx": "zxc.20260125120746.1",
+                                  "vh": "du"
+                                },
+                                {
+                                  "gnx": "zxc.20260125120905.1",
+                                  "vh": "man"
+                                },
+                                {
+                                  "gnx": "zxc.20260125120854.1",
+                                  "vh": "sed"
+                                },
+                                {
+                                  "gnx": "zxc.20260125120830.1",
+                                  "vh": "ls"
+                                },
+                                {
+                                  "gnx": "zxc.20260125120822.1",
+                                  "vh": "df"
+                                },
+                                {
+                                  "gnx": "zxc.20260125120345.1",
+                                  "vh": "snippets"
+                                },
+                                {
+                                  "gnx": "zxc.20260125120843.1",
+                                  "vh": "unzip"
+                                },
+                                {
+                                  "gnx": "zxc.20260125120405.1",
+                                  "vh": "history"
+                                },
+                                {
+                                  "gnx": "zxc.20260125120424.1",
+                                  "vh": "prompt"
+                                }
+                              ]
                             },
                             {
-                              "gnx": "zxc.20260215111803.2"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "gnx": "zxc.20260126195012.1"
-                    },
-                    {
-                      "gnx": "zxc.20260126225858.1",
-                      "vh": "scoop update"
-                    },
-                    {
-                      "gnx": "zxc.20260125025055.1",
-                      "vh": "main packages",
-                      "children": [
-                        {
-                          "gnx": "zxc.20260125120148.1",
-                          "vh": "shell",
-                          "children": [
-                            {
-                              "gnx": "zxc.20260125120941.1",
-                              "vh": "system info"
+                              "gnx": "zxc.20260125025138.1",
+                              "vh": "AI"
                             },
                             {
-                              "gnx": "zxc.20260125121058.1",
-                              "vh": "which"
+                              "gnx": "zxc.20260125030646.1",
+                              "vh": "share",
+                              "children": [
+                                {
+                                  "gnx": "zxc.20260125121412.1",
+                                  "vh": "disabled"
+                                }
+                              ]
                             },
                             {
-                              "gnx": "zxc.20260125121117.1",
-                              "vh": "typing"
+                              "gnx": "zxc.20260125025233.1",
+                              "vh": "system",
+                              "children": [
+                                {
+                                  "gnx": "zxc.20260302221340.1",
+                                  "vh": "archive"
+                                },
+                                {
+                                  "gnx": "zxc.20260125120657.1",
+                                  "vh": "unpack"
+                                },
+                                {
+                                  "gnx": "zxc.20260125120618.1",
+                                  "vh": "sudo"
+                                },
+                                {
+                                  "gnx": "zxc.20260125120634.1",
+                                  "vh": "service"
+                                },
+                                {
+                                  "gnx": "zxc.20260125120604.1",
+                                  "vh": "package manager"
+                                },
+                                {
+                                  "gnx": "zxc.20260125025238.1",
+                                  "vh": "clipboard"
+                                }
+                              ]
                             },
                             {
-                              "gnx": "zxc.20260125120914.1",
-                              "vh": "find"
+                              "gnx": "zxc.20260125025205.1",
+                              "vh": "android"
                             },
                             {
-                              "gnx": "zxc.20260125121256.1",
-                              "vh": "less"
+                              "gnx": "zxc.20260125025223.1",
+                              "vh": "CA"
                             },
                             {
-                              "gnx": "zxc.20260125120953.1",
-                              "vh": "rename"
+                              "gnx": "zxc.20260223183016.1",
+                              "vh": "email"
                             },
                             {
-                              "gnx": "zxc.20260125121052.1",
-                              "vh": "shasum"
-                            },
-                            {
-                              "gnx": "zxc.20260125121014.1",
-                              "vh": "cd"
-                            },
-                            {
-                              "gnx": "zxc.20260125120452.1",
-                              "vh": "utils"
-                            },
-                            {
-                              "gnx": "zxc.20260125120924.1",
-                              "vh": "grep"
-                            },
-                            {
-                              "gnx": "zxc.20260125120746.1",
-                              "vh": "du"
-                            },
-                            {
-                              "gnx": "zxc.20260125120905.1",
-                              "vh": "man"
-                            },
-                            {
-                              "gnx": "zxc.20260125120854.1",
-                              "vh": "sed"
-                            },
-                            {
-                              "gnx": "zxc.20260125120830.1",
-                              "vh": "ls"
-                            },
-                            {
-                              "gnx": "zxc.20260125120822.1",
-                              "vh": "df"
-                            },
-                            {
-                              "gnx": "zxc.20260125120345.1",
-                              "vh": "snippets"
-                            },
-                            {
-                              "gnx": "zxc.20260125120843.1",
-                              "vh": "unzip"
-                            },
-                            {
-                              "gnx": "zxc.20260125120405.1",
-                              "vh": "history"
-                            },
-                            {
-                              "gnx": "zxc.20260125120424.1",
-                              "vh": "prompt"
-                            }
-                          ]
-                        },
-                        {
-                          "gnx": "zxc.20260125025138.1",
-                          "vh": "AI"
-                        },
-                        {
-                          "gnx": "zxc.20260125030646.1",
-                          "vh": "share",
-                          "children": [
-                            {
-                              "gnx": "zxc.20260125121412.1",
-                              "vh": "disabled"
-                            }
-                          ]
-                        },
-                        {
-                          "gnx": "zxc.20260125025233.1",
-                          "vh": "system",
-                          "children": [
-                            {
-                              "gnx": "zxc.20260302221340.1",
-                              "vh": "archive"
-                            },
-                            {
-                              "gnx": "zxc.20260125120657.1",
-                              "vh": "unpack"
-                            },
-                            {
-                              "gnx": "zxc.20260125120618.1",
-                              "vh": "sudo"
-                            },
-                            {
-                              "gnx": "zxc.20260125120634.1",
-                              "vh": "service"
-                            },
-                            {
-                              "gnx": "zxc.20260125120604.1",
-                              "vh": "package manager"
-                            },
-                            {
-                              "gnx": "zxc.20260125025238.1",
-                              "vh": "clipboard"
-                            }
-                          ]
-                        },
-                        {
-                          "gnx": "zxc.20260125025205.1",
-                          "vh": "android"
-                        },
-                        {
-                          "gnx": "zxc.20260125025223.1",
-                          "vh": "CA"
-                        },
-                        {
-                          "gnx": "zxc.20260223183016.1",
-                          "vh": "email"
-                        },
-                        {
-                          "gnx": "zxc.20260125030627.1",
-                          "vh": "scoop helper"
-                        },
-                        {
-                          "gnx": "zxc.20260125025255.1",
-                          "vh": "CMS"
-                        },
-                        {
-                          "gnx": "zxc.20260125030319.1",
-                          "vh": "image",
-                          "children": [
-                            {
-                              "gnx": "zxc.20260125121032.1",
-                              "vh": "info"
-                            },
-                            {
-                              "gnx": "zxc.20260125030330.1",
-                              "vh": "edit"
-                            }
-                          ]
-                        },
-                        {
-                          "gnx": "zxc.20260125025907.1",
-                          "vh": "editor"
-                        },
-                        {
-                          "gnx": "zxc.20260125121154.1",
-                          "vh": "video",
-                          "children": [
-                            {
-                              "gnx": "zxc.20260125121216.1",
-                              "vh": "editor"
-                            }
-                          ]
-                        },
-                        {
-                          "gnx": "zxc.20260201145849.1",
-                          "vh": "share"
-                        },
-                        {
-                          "gnx": "zxc.20260125030044.1",
-                          "vh": "search"
-                        },
-                        {
-                          "gnx": "zxc.20260125030122.1",
-                          "vh": "git",
-                          "children": [
-                            {
-                              "gnx": "zxc.20260301233402.1",
-                              "vh": "auto"
-                            },
-                            {
-                              "gnx": "zxc.20260201145657.1",
-                              "vh": "bug"
-                            },
-                            {
-                              "gnx": "zxc.20260201232635.1",
-                              "vh": "github"
-                            },
-                            {
-                              "gnx": "zxc.20260125030139.1",
-                              "vh": "lfs"
-                            },
-                            {
-                              "gnx": "zxc.20260201145946.1",
-                              "vh": "fixup"
-                            },
-                            {
-                              "gnx": "zxc.20260125030214.1",
-                              "vh": "diff"
-                            },
-                            {
-                              "gnx": "zxc.20260201145737.1",
-                              "vh": "encrypt"
-                            },
-                            {
-                              "gnx": "zxc.20260125030301.1",
-                              "vh": "tui"
-                            },
-                            {
-                              "gnx": "zxc.20260125030245.1",
-                              "vh": "search"
-                            },
-                            {
-                              "gnx": "zxc.20260218032658.1",
-                              "vh": "hook"
-                            }
-                          ]
-                        },
-                        {
-                          "gnx": "zxc.20260125025845.1",
-                          "vh": "downloader"
-                        },
-                        {
-                          "gnx": "zxc.20260125025943.1",
-                          "vh": "encrypt"
-                        },
-                        {
-                          "gnx": "zxc.20260125030353.1",
-                          "vh": "network"
-                        },
-                        {
-                          "gnx": "zxc.20260125025707.1",
-                          "vh": "document"
-                        },
-                        {
-                          "gnx": "zxc.20260125030104.1",
-                          "vh": "fuzzy finder"
-                        },
-                        {
-                          "gnx": "zxc.20260125025829.1",
-                          "vh": "dotfile manager"
-                        },
-                        {
-                          "gnx": "zxc.20260125025957.1",
-                          "vh": "file manager"
-                        },
-                        {
-                          "gnx": "zxc.20260125025310.1",
-                          "vh": "dev",
-                          "children": [
-                            {
-                              "gnx": "zxc.20260125025616.1",
-                              "vh": "markdown"
-                            },
-                            {
-                              "gnx": "zxc.20260217195910.1",
-                              "vh": "c"
-                            },
-                            {
-                              "gnx": "zxc.20260217200306.1",
-                              "vh": "latex"
-                            },
-                            {
-                              "gnx": "zxc.20260201153647.1",
-                              "vh": "toml"
-                            },
-                            {
-                              "gnx": "zxc.20260216213322.1",
-                              "vh": "python"
-                            },
-                            {
-                              "gnx": "zxc.20260216215830.1",
-                              "vh": "lua"
-                            },
-                            {
-                              "gnx": "zxc.20260218030039.1",
-                              "vh": "sql"
-                            },
-                            {
-                              "gnx": "zxc.20260125025649.1",
-                              "vh": "perl"
-                            },
-                            {
-                              "gnx": "zxc.20260125025640.1",
-                              "vh": "nodejs"
-                            },
-                            {
-                              "gnx": "zxc.20260125025604.1",
-                              "vh": "latex"
-                            },
-                            {
-                              "gnx": "zxc.20260216205015.1",
-                              "vh": "yaml"
-                            },
-                            {
-                              "gnx": "zxc.20260125025549.1",
-                              "vh": "haskell"
-                            },
-                            {
-                              "gnx": "zxc.20260214110617.1",
-                              "vh": "rust"
-                            },
-                            {
-                              "gnx": "zxc.20260125025510.1",
-                              "vh": "compile"
-                            },
-                            {
-                              "gnx": "zxc.20260125025534.1",
-                              "vh": "environment"
-                            },
-                            {
-                              "gnx": "zxc.20260125025339.1",
-                              "vh": "bash"
-                            },
-                            {
-                              "gnx": "zxc.20260125025352.1",
-                              "vh": "binary"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "gnx": "zxc.20260219200426.1",
-                      "vh": "install npm"
-                    },
-                    {
-                      "gnx": "zxc.20260125121500.1",
-                      "vh": "extras packages",
-                      "children": [
-                        {
-                          "gnx": "zxc.20260125121633.1",
-                          "vh": "android"
-                        },
-                        {
-                          "gnx": "zxc.20260301225753.1",
-                          "vh": "anime"
-                        },
-                        {
-                          "gnx": "zxc.20260228235919.1",
-                          "vh": "audio",
-                          "children": [
-                            {
-                              "gnx": "zxc.20260228235922.1",
-                              "vh": "mpd"
-                            }
-                          ]
-                        },
-                        {
-                          "gnx": "zxc.20260125121651.1",
-                          "vh": "automation"
-                        },
-                        {
-                          "gnx": "zxc.20260125121707.1",
-                          "vh": "book"
-                        },
-                        {
-                          "gnx": "zxc.20260125121729.1",
-                          "vh": "browser"
-                        },
-                        {
-                          "gnx": "zxc.20260125121756.1",
-                          "vh": "chat"
-                        },
-                        {
-                          "gnx": "zxc.20260125121858.1",
-                          "vh": "dev"
-                        },
-                        {
-                          "gnx": "zxc.20260125121926.1",
-                          "vh": "document"
-                        },
-                        {
-                          "gnx": "zxc.20260125121949.1",
-                          "vh": "download"
-                        },
-                        {
-                          "gnx": "zxc.20260125121959.1",
-                          "vh": "editor",
-                          "children": [
-                            {
-                              "gnx": "zxc.20260201153020.1",
-                              "vh": "lunarvim"
-                            }
-                          ]
-                        },
-                        {
-                          "gnx": "zxc.20260125122011.1",
-                          "vh": "education"
-                        },
-                        {
-                          "gnx": "zxc.20260125121849.1",
-                          "vh": "encypt"
-                        },
-                        {
-                          "gnx": "zxc.20260125122022.1",
-                          "vh": "file manager"
-                        },
-                        {
-                          "gnx": "zxc.20260125122031.1",
-                          "vh": "game"
-                        },
-                        {
-                          "gnx": "zxc.20260125122040.1",
-                          "vh": "git"
-                        },
-                        {
-                          "gnx": "zxc.20260125122054.1",
-                          "vh": "image",
-                          "children": [
-                            {
-                              "gnx": "zxc.20260125122109.1",
-                              "vh": "view"
-                            },
-                            {
-                              "gnx": "zxc.20260125122059.1",
-                              "vh": "edit"
-                            }
-                          ]
-                        },
-                        {
-                          "gnx": "zxc.20260125122306.1",
-                          "vh": "keyboard"
-                        },
-                        {
-                          "gnx": "zxc.20260125122314.1",
-                          "vh": "math"
-                        },
-                        {
-                          "gnx": "zxc.20260125121911.1",
-                          "vh": "network"
-                        },
-                        {
-                          "gnx": "zxc.20260125122322.1",
-                          "vh": "note"
-                        },
-                        {
-                          "gnx": "zxc.20260125122329.1",
-                          "vh": "qr code"
-                        },
-                        {
-                          "gnx": "zxc.20260125122341.1",
-                          "vh": "remote control"
-                        },
-                        {
-                          "gnx": "zxc.20260125122353.1",
-                          "vh": "screen shot"
-                        },
-                        {
-                          "gnx": "zxc.20260125122412.1",
-                          "vh": "shell",
-                          "children": [
-                            {
-                              "gnx": "zxc.20260125122506.1",
-                              "vh": "fuzzy finder"
-                            },
-                            {
-                              "gnx": "zxc.20260125122546.1",
-                              "vh": "completion"
-                            },
-                            {
-                              "gnx": "zxc.20260125123243.1",
-                              "vh": "todo"
-                            },
-                            {
-                              "gnx": "zxc.20260125122532.1",
+                              "gnx": "zxc.20260125030627.1",
                               "vh": "scoop helper"
                             },
                             {
-                              "gnx": "zxc.20260125122444.1",
-                              "vh": "powershell module"
+                              "gnx": "zxc.20260125025255.1",
+                              "vh": "CMS"
                             },
                             {
-                              "gnx": "zxc.20260301132135.1",
-                              "vh": "paper"
-                            }
-                          ]
-                        },
-                        {
-                          "gnx": "zxc.20260125122737.1",
-                          "vh": "system",
-                          "children": [
-                            {
-                              "gnx": "zxc.20260125123048.1",
-                              "vh": "window manager"
+                              "gnx": "zxc.20260125030319.1",
+                              "vh": "image",
+                              "children": [
+                                {
+                                  "gnx": "zxc.20260125121032.1",
+                                  "vh": "info"
+                                },
+                                {
+                                  "gnx": "zxc.20260125030330.1",
+                                  "vh": "edit"
+                                }
+                              ]
                             },
                             {
-                              "gnx": "zxc.20260125123009.1",
-                              "vh": "proxy"
+                              "gnx": "zxc.20260125025907.1",
+                              "vh": "editor"
                             },
                             {
-                              "gnx": "zxc.20260125123134.1",
-                              "vh": "disk"
+                              "gnx": "zxc.20260125121154.1",
+                              "vh": "video",
+                              "children": [
+                                {
+                                  "gnx": "zxc.20260125121216.1",
+                                  "vh": "editor"
+                                }
+                              ]
                             },
                             {
-                              "gnx": "zxc.20260125123102.1",
-                              "vh": "launcher"
+                              "gnx": "zxc.20260201145849.1",
+                              "vh": "share"
                             },
                             {
-                              "gnx": "zxc.20260220200724.1",
-                              "vh": "package manager"
-                            },
-                            {
-                              "gnx": "zxc.20260125122946.1",
-                              "vh": "dhcp"
-                            },
-                            {
-                              "gnx": "zxc.20260125123027.1",
-                              "vh": "timer"
-                            },
-                            {
-                              "gnx": "zxc.20260125122959.1",
-                              "vh": "clipboard"
-                            },
-                            {
-                              "gnx": "zxc.20260201035339.1",
-                              "vh": "cleaner"
-                            },
-                            {
-                              "gnx": "zxc.20260125123119.1",
+                              "gnx": "zxc.20260125030044.1",
                               "vh": "search"
                             },
                             {
-                              "gnx": "zxc.20260125122932.1",
-                              "vh": "kvm"
+                              "gnx": "zxc.20260125030122.1",
+                              "vh": "git",
+                              "children": [
+                                {
+                                  "gnx": "zxc.20260301233402.1",
+                                  "vh": "auto"
+                                },
+                                {
+                                  "gnx": "zxc.20260201145657.1",
+                                  "vh": "bug"
+                                },
+                                {
+                                  "gnx": "zxc.20260201232635.1",
+                                  "vh": "github"
+                                },
+                                {
+                                  "gnx": "zxc.20260125030139.1",
+                                  "vh": "lfs"
+                                },
+                                {
+                                  "gnx": "zxc.20260201145946.1",
+                                  "vh": "fixup"
+                                },
+                                {
+                                  "gnx": "zxc.20260125030214.1",
+                                  "vh": "diff"
+                                },
+                                {
+                                  "gnx": "zxc.20260201145737.1",
+                                  "vh": "encrypt"
+                                },
+                                {
+                                  "gnx": "zxc.20260125030301.1",
+                                  "vh": "tui"
+                                },
+                                {
+                                  "gnx": "zxc.20260125030245.1",
+                                  "vh": "search"
+                                },
+                                {
+                                  "gnx": "zxc.20260218032658.1",
+                                  "vh": "hook"
+                                }
+                              ]
                             },
                             {
-                              "gnx": "zxc.20260125122817.1",
-                              "vh": "comperature"
+                              "gnx": "zxc.20260125025845.1",
+                              "vh": "downloader"
                             },
                             {
-                              "gnx": "zxc.20260125122744.1",
-                              "vh": "uninstall"
+                              "gnx": "zxc.20260125025943.1",
+                              "vh": "encrypt"
+                            },
+                            {
+                              "gnx": "zxc.20260125030353.1",
+                              "vh": "network"
+                            },
+                            {
+                              "gnx": "zxc.20260125025707.1",
+                              "vh": "document"
+                            },
+                            {
+                              "gnx": "zxc.20260125030104.1",
+                              "vh": "fuzzy finder"
+                            },
+                            {
+                              "gnx": "zxc.20260125025829.1",
+                              "vh": "dotfile manager"
+                            },
+                            {
+                              "gnx": "zxc.20260125025957.1",
+                              "vh": "file manager"
+                            },
+                            {
+                              "gnx": "zxc.20260125025310.1",
+                              "vh": "dev",
+                              "children": [
+                                {
+                                  "gnx": "zxc.20260125025616.1",
+                                  "vh": "markdown"
+                                },
+                                {
+                                  "gnx": "zxc.20260217195910.1",
+                                  "vh": "c"
+                                },
+                                {
+                                  "gnx": "zxc.20260217200306.1",
+                                  "vh": "latex"
+                                },
+                                {
+                                  "gnx": "zxc.20260201153647.1",
+                                  "vh": "toml"
+                                },
+                                {
+                                  "gnx": "zxc.20260216213322.1",
+                                  "vh": "python"
+                                },
+                                {
+                                  "gnx": "zxc.20260216215830.1",
+                                  "vh": "lua"
+                                },
+                                {
+                                  "gnx": "zxc.20260218030039.1",
+                                  "vh": "sql"
+                                },
+                                {
+                                  "gnx": "zxc.20260125025649.1",
+                                  "vh": "perl"
+                                },
+                                {
+                                  "gnx": "zxc.20260125025640.1",
+                                  "vh": "nodejs"
+                                },
+                                {
+                                  "gnx": "zxc.20260125025604.1",
+                                  "vh": "latex"
+                                },
+                                {
+                                  "gnx": "zxc.20260216205015.1",
+                                  "vh": "yaml"
+                                },
+                                {
+                                  "gnx": "zxc.20260125025549.1",
+                                  "vh": "haskell"
+                                },
+                                {
+                                  "gnx": "zxc.20260214110617.1",
+                                  "vh": "rust"
+                                },
+                                {
+                                  "gnx": "zxc.20260125025510.1",
+                                  "vh": "compile"
+                                },
+                                {
+                                  "gnx": "zxc.20260125025534.1",
+                                  "vh": "environment"
+                                },
+                                {
+                                  "gnx": "zxc.20260125025339.1",
+                                  "vh": "bash"
+                                },
+                                {
+                                  "gnx": "zxc.20260125025352.1",
+                                  "vh": "binary"
+                                }
+                              ]
                             }
                           ]
                         },
                         {
-                          "gnx": "zxc.20260125123203.1",
-                          "vh": "terminal"
+                          "gnx": "zxc.20260219200426.1",
+                          "vh": "install npm"
                         },
                         {
-                          "gnx": "zxc.20260125123227.1",
-                          "vh": "text expander"
-                        },
-                        {
-                          "gnx": "zxc.20260125123255.1",
-                          "vh": "translation"
-                        },
-                        {
-                          "gnx": "zxc.20260125123314.1",
-                          "vh": "usb drive"
-                        },
-                        {
-                          "gnx": "zxc.20260125123345.1",
-                          "vh": "video",
+                          "gnx": "zxc.20260125121500.1",
+                          "vh": "extras packages",
                           "children": [
                             {
-                              "gnx": "zxc.20260125123423.1",
-                              "vh": "player"
+                              "gnx": "zxc.20260125121633.1",
+                              "vh": "android"
                             },
                             {
-                              "gnx": "zxc.20260125123353.1",
-                              "vh": "edit"
+                              "gnx": "zxc.20260301225753.1",
+                              "vh": "anime"
+                            },
+                            {
+                              "gnx": "zxc.20260228235919.1",
+                              "vh": "audio",
+                              "children": [
+                                {
+                                  "gnx": "zxc.20260228235922.1",
+                                  "vh": "mpd"
+                                }
+                              ]
+                            },
+                            {
+                              "gnx": "zxc.20260125121651.1",
+                              "vh": "automation"
+                            },
+                            {
+                              "gnx": "zxc.20260125121707.1",
+                              "vh": "book"
+                            },
+                            {
+                              "gnx": "zxc.20260125121729.1",
+                              "vh": "browser"
+                            },
+                            {
+                              "gnx": "zxc.20260125121756.1",
+                              "vh": "chat"
+                            },
+                            {
+                              "gnx": "zxc.20260125121858.1",
+                              "vh": "dev"
+                            },
+                            {
+                              "gnx": "zxc.20260125121926.1",
+                              "vh": "document"
+                            },
+                            {
+                              "gnx": "zxc.20260125121949.1",
+                              "vh": "download"
+                            },
+                            {
+                              "gnx": "zxc.20260125121959.1",
+                              "vh": "editor",
+                              "children": [
+                                {
+                                  "gnx": "zxc.20260201153020.1",
+                                  "vh": "lunarvim"
+                                }
+                              ]
+                            },
+                            {
+                              "gnx": "zxc.20260125122011.1",
+                              "vh": "education"
+                            },
+                            {
+                              "gnx": "zxc.20260125121849.1",
+                              "vh": "encypt"
+                            },
+                            {
+                              "gnx": "zxc.20260125122022.1",
+                              "vh": "file manager"
+                            },
+                            {
+                              "gnx": "zxc.20260125122031.1",
+                              "vh": "game"
+                            },
+                            {
+                              "gnx": "zxc.20260125122040.1",
+                              "vh": "git"
+                            },
+                            {
+                              "gnx": "zxc.20260125122054.1",
+                              "vh": "image",
+                              "children": [
+                                {
+                                  "gnx": "zxc.20260125122109.1",
+                                  "vh": "view"
+                                },
+                                {
+                                  "gnx": "zxc.20260125122059.1",
+                                  "vh": "edit"
+                                }
+                              ]
+                            },
+                            {
+                              "gnx": "zxc.20260125122306.1",
+                              "vh": "keyboard"
+                            },
+                            {
+                              "gnx": "zxc.20260125122314.1",
+                              "vh": "math"
+                            },
+                            {
+                              "gnx": "zxc.20260125121911.1",
+                              "vh": "network"
+                            },
+                            {
+                              "gnx": "zxc.20260125122322.1",
+                              "vh": "note"
+                            },
+                            {
+                              "gnx": "zxc.20260125122329.1",
+                              "vh": "qr code"
+                            },
+                            {
+                              "gnx": "zxc.20260125122341.1",
+                              "vh": "remote control"
+                            },
+                            {
+                              "gnx": "zxc.20260125122353.1",
+                              "vh": "screen shot"
+                            },
+                            {
+                              "gnx": "zxc.20260125122412.1",
+                              "vh": "shell",
+                              "children": [
+                                {
+                                  "gnx": "zxc.20260125122506.1",
+                                  "vh": "fuzzy finder"
+                                },
+                                {
+                                  "gnx": "zxc.20260125122546.1",
+                                  "vh": "completion"
+                                },
+                                {
+                                  "gnx": "zxc.20260125123243.1",
+                                  "vh": "todo"
+                                },
+                                {
+                                  "gnx": "zxc.20260125122532.1",
+                                  "vh": "scoop helper"
+                                },
+                                {
+                                  "gnx": "zxc.20260125122444.1",
+                                  "vh": "powershell module"
+                                },
+                                {
+                                  "gnx": "zxc.20260301132135.1",
+                                  "vh": "paper"
+                                }
+                              ]
+                            },
+                            {
+                              "gnx": "zxc.20260125122737.1",
+                              "vh": "system",
+                              "children": [
+                                {
+                                  "gnx": "zxc.20260125123048.1",
+                                  "vh": "window manager"
+                                },
+                                {
+                                  "gnx": "zxc.20260125123009.1",
+                                  "vh": "proxy"
+                                },
+                                {
+                                  "gnx": "zxc.20260125123134.1",
+                                  "vh": "disk"
+                                },
+                                {
+                                  "gnx": "zxc.20260125123102.1",
+                                  "vh": "launcher"
+                                },
+                                {
+                                  "gnx": "zxc.20260220200724.1",
+                                  "vh": "package manager"
+                                },
+                                {
+                                  "gnx": "zxc.20260125122946.1",
+                                  "vh": "dhcp"
+                                },
+                                {
+                                  "gnx": "zxc.20260125123027.1",
+                                  "vh": "timer"
+                                },
+                                {
+                                  "gnx": "zxc.20260125122959.1",
+                                  "vh": "clipboard"
+                                },
+                                {
+                                  "gnx": "zxc.20260201035339.1",
+                                  "vh": "cleaner"
+                                },
+                                {
+                                  "gnx": "zxc.20260125123119.1",
+                                  "vh": "search"
+                                },
+                                {
+                                  "gnx": "zxc.20260125122932.1",
+                                  "vh": "kvm"
+                                },
+                                {
+                                  "gnx": "zxc.20260125122817.1",
+                                  "vh": "comperature"
+                                },
+                                {
+                                  "gnx": "zxc.20260125122744.1",
+                                  "vh": "uninstall"
+                                }
+                              ]
+                            },
+                            {
+                              "gnx": "zxc.20260125123203.1",
+                              "vh": "terminal"
+                            },
+                            {
+                              "gnx": "zxc.20260125123227.1",
+                              "vh": "text expander"
+                            },
+                            {
+                              "gnx": "zxc.20260125123255.1",
+                              "vh": "translation"
+                            },
+                            {
+                              "gnx": "zxc.20260125123314.1",
+                              "vh": "usb drive"
+                            },
+                            {
+                              "gnx": "zxc.20260125123345.1",
+                              "vh": "video",
+                              "children": [
+                                {
+                                  "gnx": "zxc.20260125123423.1",
+                                  "vh": "player"
+                                },
+                                {
+                                  "gnx": "zxc.20260125123353.1",
+                                  "vh": "edit"
+                                }
+                              ]
+                            },
+                            {
+                              "gnx": "zxc.20260125123442.1",
+                              "vh": "whiteboard"
+                            },
+                            {
+                              "gnx": "zxc.20260220015943.1",
+                              "vh": "wsl"
                             }
                           ]
                         },
                         {
-                          "gnx": "zxc.20260125123442.1",
-                          "vh": "whiteboard"
-                        },
-                        {
-                          "gnx": "zxc.20260220015943.1",
-                          "vh": "wsl"
+                          "gnx": "zxc.20260130231621.1",
+                          "vh": "nerd fonts packages",
+                          "children": [
+                            {
+                              "gnx": "zxc.20260130231633.1",
+                              "vh": "maple"
+                            },
+                            {
+                              "gnx": "zxc.20260218121524.1",
+                              "vh": "symbols"
+                            },
+                            {
+                              "gnx": "zxc.20260218121953.1",
+                              "vh": "fira code"
+                            },
+                            {
+                              "gnx": "zxc.20260218122032.1",
+                              "vh": "noto cjk"
+                            }
+                          ]
                         }
                       ]
                     },
                     {
-                      "gnx": "zxc.20260130231621.1",
-                      "vh": "nerd fonts packages",
+                      "gnx": "zxc.20260125125332.1",
+                      "vh": "pipx",
                       "children": [
                         {
-                          "gnx": "zxc.20260130231633.1",
-                          "vh": "maple"
+                          "gnx": "zxc.20260125125341.1",
+                          "vh": "add to Path"
                         },
                         {
-                          "gnx": "zxc.20260218121524.1",
-                          "vh": "symbols"
+                          "gnx": "zxc.20260125132006.1",
+                          "vh": "install packages",
+                          "children": [
+                            {
+                              "gnx": "zxc.20260126223811.1",
+                              "vh": "ad"
+                            },
+                            {
+                              "gnx": "zxc.20260126231151.1",
+                              "vh": "xonsh"
+                            },
+                            {
+                              "gnx": "zxc.20260216015502.1",
+                              "vh": "mutagen"
+                            },
+                            {
+                              "gnx": "zxc.20260216213715.1",
+                              "vh": "jedi-language-server"
+                            },
+                            {
+                              "gnx": "zxc.20260216213950.1",
+                              "vh": "pylsp"
+                            },
+                            {
+                              "gnx": "zxc.20260218022919.1",
+                              "vh": "basedpyright"
+                            },
+                            {
+                              "gnx": "zxc.20260218023019.1",
+                              "vh": "ansible"
+                            },
+                            {
+                              "gnx": "zxc.20260218025808.1",
+                              "vh": "grip"
+                            },
+                            {
+                              "gnx": "zxc.20260222203819.1",
+                              "vh": "names"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "gnx": "zxc.20260214133456.1",
+                      "vh": "cargo",
+                      "children": [
+                        {
+                          "gnx": "zxc.20260214133505.1",
+                          "vh": "add to Path"
                         },
                         {
-                          "gnx": "zxc.20260218121953.1",
-                          "vh": "fira code"
+                          "gnx": "zxc.20260214134044.1",
+                          "vh": "install packages locked git",
+                          "children": [
+                            {
+                              "gnx": "zxc.20260214134128.1",
+                              "vh": "simple-completion-language-server"
+                            }
+                          ]
                         },
                         {
-                          "gnx": "zxc.20260218122032.1",
-                          "vh": "noto cjk"
+                          "gnx": "zxc.20260309155645.1",
+                          "vh": "install packages ",
+                          "children": [
+                            {
+                              "gnx": "zxc.20260309155645.3",
+                              "vh": "unigetui"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "gnx": "zxc.20260216182729.1",
+                      "vh": "npm",
+                      "children": [
+                        {
+                          "gnx": "zxc.20260216191851.1",
+                          "vh": "prettier"
+                        },
+                        {
+                          "gnx": "zxc.20260216191908.1",
+                          "vh": "vscode-langservers-extracted"
+                        },
+                        {
+                          "gnx": "zxc.20260216203621.1",
+                          "vh": "yaml-language-server"
+                        },
+                        {
+                          "gnx": "zxc.20260216203941.1",
+                          "vh": "ansible-language-server"
+                        }
+                      ]
+                    },
+                    {
+                      "gnx": "zxc.20260216155251.1",
+                      "vh": "env",
+                      "children": [
+                        {
+                          "gnx": "zxc.20260216155257.1",
+                          "vh": "home"
+                        },
+                        {
+                          "gnx": "zxc.20260216162853.1",
+                          "vh": "doom emacs"
+                        }
+                      ]
+                    },
+                    {
+                      "gnx": "zxc.20260216180449.1",
+                      "vh": "rime as default input method"
+                    },
+                    {
+                      "gnx": "zxc.20260217183249.1",
+                      "vh": "eget",
+                      "children": [
+                        {
+                          "gnx": "zxc.20260217183336.1",
+                          "vh": "check eget config"
+                        },
+                        {
+                          "gnx": "zxc.20260227203321.1",
+                          "vh": "set eget config"
+                        },
+                        {
+                          "gnx": "zxc.20260217183446.1",
+                          "vh": "install",
+                          "children": [
+                            {
+                              "gnx": "zxc.20260217183548.1",
+                              "vh": "mani"
+                            },
+                            {
+                              "gnx": "zxc.20260218030313.1",
+                              "vh": "dockfmt"
+                            },
+                            {
+                              "gnx": "zxc.20260218031907.1",
+                              "vh": "keep-sorted"
+                            },
+                            {
+                              "gnx": "zxc.20260218191753.1",
+                              "vh": "emacs-lsp-booster"
+                            },
+                            {
+                              "gnx": "zxc.20260220012452.1",
+                              "vh": "git-credential-gopass"
+                            },
+                            {
+                              "gnx": "zxc.20260227204153.1",
+                              "vh": "helix"
+                            },
+                            {
+                              "gnx": "zxc.20260227233813.1",
+                              "vh": "mtranserver"
+                            }
+                          ]
+                        },
+                        {
+                          "gnx": "zxc.20260218030929.1",
+                          "vh": "fix"
+                        }
+                      ]
+                    },
+                    {
+                      "gnx": "zxc.20260217213824.1",
+                      "vh": "add msys2 to Path"
+                    },
+                    {
+                      "gnx": "zxc.20260227205212.1",
+                      "vh": "pip",
+                      "children": [
+                        {
+                          "gnx": "zxc.20260227205247.1",
+                          "vh": "vim-ghost"
                         }
                       ]
                     }
                   ]
                 },
                 {
-                  "gnx": "zxc.20260125125332.1",
-                  "vh": "pipx",
+                  "gnx": "zxc.20260215141824.1",
+                  "vh": "game part",
                   "children": [
                     {
-                      "gnx": "zxc.20260125125341.1",
-                      "vh": "add to Path"
+                      "gnx": "zxc.20260215142414.1",
+                      "vh": "facts"
                     },
                     {
-                      "gnx": "zxc.20260125132006.1",
-                      "vh": "install packages",
+                      "gnx": "zxc.20260215141909.1",
+                      "vh": "scoop",
                       "children": [
                         {
-                          "gnx": "zxc.20260126223811.1",
-                          "vh": "ad"
+                          "gnx": "zxc.20260215141835.1"
                         },
                         {
-                          "gnx": "zxc.20260126231151.1",
-                          "vh": "xonsh"
-                        },
-                        {
-                          "gnx": "zxc.20260216015502.1",
-                          "vh": "mutagen"
-                        },
-                        {
-                          "gnx": "zxc.20260216213715.1",
-                          "vh": "jedi-language-server"
-                        },
-                        {
-                          "gnx": "zxc.20260216213950.1",
-                          "vh": "pylsp"
-                        },
-                        {
-                          "gnx": "zxc.20260218022919.1",
-                          "vh": "basedpyright"
-                        },
-                        {
-                          "gnx": "zxc.20260218023019.1",
-                          "vh": "ansible"
-                        },
-                        {
-                          "gnx": "zxc.20260218025808.1",
-                          "vh": "grip"
-                        },
-                        {
-                          "gnx": "zxc.20260222203819.1",
-                          "vh": "names"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "gnx": "zxc.20260214133456.1",
-                  "vh": "cargo",
-                  "children": [
-                    {
-                      "gnx": "zxc.20260214133505.1",
-                      "vh": "add to Path"
-                    },
-                    {
-                      "gnx": "zxc.20260214134044.1",
-                      "vh": "install packages locked git",
-                      "children": [
-                        {
-                          "gnx": "zxc.20260214134128.1",
-                          "vh": "simple-completion-language-server"
+                          "gnx": "zxc.20260126195012.1"
                         }
                       ]
                     },
                     {
-                      "gnx": "zxc.20260309155645.1",
-                      "vh": "install packages ",
+                      "gnx": "zxc.20260215142237.1",
+                      "vh": "wegame",
                       "children": [
                         {
-                          "gnx": "zxc.20260309155645.3",
-                          "vh": "unigetui"
+                          "gnx": "zxc.20260215142237.2",
+                          "vh": "aki bucket"
+                        },
+                        {
+                          "gnx": "zxc.20260215142237.3",
+                          "vh": "install"
+                        },
+                        {
+                          "gnx": "zxc.20260215142237.4",
+                          "vh": "remvo scoop buckets aki"
                         }
                       ]
+                    },
+                    {
+                      "gnx": "zxc.20260216001635.1",
+                      "vh": "ldplayer"
+                    },
+                    {
+                      "gnx": "zxc.20260216004633.1",
+                      "vh": "blue stacks"
                     }
                   ]
                 },
                 {
-                  "gnx": "zxc.20260216182729.1",
-                  "vh": "npm",
+                  "gnx": "zxc.20260226193530.1",
+                  "vh": "admin part 2",
                   "children": [
                     {
-                      "gnx": "zxc.20260216191851.1",
-                      "vh": "prettier"
-                    },
-                    {
-                      "gnx": "zxc.20260216191908.1",
-                      "vh": "vscode-langservers-extracted"
-                    },
-                    {
-                      "gnx": "zxc.20260216203621.1",
-                      "vh": "yaml-language-server"
-                    },
-                    {
-                      "gnx": "zxc.20260216203941.1",
-                      "vh": "ansible-language-server"
-                    }
-                  ]
-                },
-                {
-                  "gnx": "zxc.20260216155251.1",
-                  "vh": "env",
-                  "children": [
-                    {
-                      "gnx": "zxc.20260216155257.1",
-                      "vh": "home"
-                    },
-                    {
-                      "gnx": "zxc.20260216162853.1",
-                      "vh": "doom emacs"
-                    }
-                  ]
-                },
-                {
-                  "gnx": "zxc.20260216180449.1",
-                  "vh": "rime as default input method"
-                },
-                {
-                  "gnx": "zxc.20260217183249.1",
-                  "vh": "eget",
-                  "children": [
-                    {
-                      "gnx": "zxc.20260217183336.1",
-                      "vh": "check eget config"
-                    },
-                    {
-                      "gnx": "zxc.20260227203321.1",
-                      "vh": "set eget config"
-                    },
-                    {
-                      "gnx": "zxc.20260217183446.1",
-                      "vh": "install",
+                      "gnx": "zxc.20260226193604.1",
+                      "vh": "firewall",
                       "children": [
                         {
-                          "gnx": "zxc.20260217183548.1",
-                          "vh": "mani"
+                          "gnx": "zxc.20260226193604.2",
+                          "vh": "check ansible_facts"
                         },
                         {
-                          "gnx": "zxc.20260218030313.1",
-                          "vh": "dockfmt"
+                          "gnx": "zxc.20260227224730.1",
+                          "vh": "enable firewalls"
                         },
                         {
-                          "gnx": "zxc.20260218031907.1",
-                          "vh": "keep-sorted"
+                          "gnx": "zxc.20260226193604.3",
+                          "vh": "croc"
                         },
                         {
-                          "gnx": "zxc.20260218191753.1",
-                          "vh": "emacs-lsp-booster"
+                          "gnx": "zxc.20260226193604.4",
+                          "vh": "deskflow"
                         },
                         {
-                          "gnx": "zxc.20260220012452.1",
-                          "vh": "git-credential-gopass"
+                          "gnx": "zxc.20260226193604.5",
+                          "vh": "aria2"
                         },
                         {
-                          "gnx": "zxc.20260227204153.1",
-                          "vh": "helix"
+                          "gnx": "zxc.20260226193604.6",
+                          "vh": "dufs"
                         },
                         {
-                          "gnx": "zxc.20260227233813.1",
+                          "gnx": "zxc.20260226193604.7",
+                          "vh": "alist"
+                        },
+                        {
+                          "gnx": "zxc.20260227222048.1",
+                          "vh": "helix-ghost"
+                        },
+                        {
+                          "gnx": "zxc.20260227224509.1",
+                          "vh": "python"
+                        },
+                        {
+                          "gnx": "zxc.20260227234406.1",
                           "vh": "mtranserver"
+                        },
+                        {
+                          "gnx": "zxc.20260301000713.1",
+                          "vh": "mpd"
+                        },
+                        {
+                          "gnx": "zxc.20260301183009.1",
+                          "vh": "kde connect"
                         }
                       ]
                     },
                     {
-                      "gnx": "zxc.20260218030929.1",
-                      "vh": "fix"
-                    }
-                  ]
-                },
-                {
-                  "gnx": "zxc.20260217213824.1",
-                  "vh": "add msys2 to Path"
-                },
-                {
-                  "gnx": "zxc.20260227205212.1",
-                  "vh": "pip",
-                  "children": [
+                      "gnx": "zxc.20260228201243.1",
+                      "vh": "hostname"
+                    },
                     {
-                      "gnx": "zxc.20260227205247.1",
-                      "vh": "vim-ghost"
+                      "gnx": "zxc.20260303203458.1",
+                      "vh": "scoop"
                     }
                   ]
                 }
               ]
             },
             {
-              "gnx": "zxc.20260215141824.1",
-              "vh": "game part",
-              "children": [
-                {
-                  "gnx": "zxc.20260215142414.1",
-                  "vh": "facts"
-                },
-                {
-                  "gnx": "zxc.20260215141909.1",
-                  "vh": "scoop",
-                  "children": [
-                    {
-                      "gnx": "zxc.20260215141835.1"
-                    },
-                    {
-                      "gnx": "zxc.20260126195012.1"
-                    }
-                  ]
-                },
-                {
-                  "gnx": "zxc.20260215142237.1",
-                  "vh": "wegame",
-                  "children": [
-                    {
-                      "gnx": "zxc.20260215142237.2",
-                      "vh": "aki bucket"
-                    },
-                    {
-                      "gnx": "zxc.20260215142237.3",
-                      "vh": "install"
-                    },
-                    {
-                      "gnx": "zxc.20260215142237.4",
-                      "vh": "remvo scoop buckets aki"
-                    }
-                  ]
-                },
-                {
-                  "gnx": "zxc.20260216001635.1",
-                  "vh": "ldplayer"
-                },
-                {
-                  "gnx": "zxc.20260216004633.1",
-                  "vh": "blue stacks"
-                }
-              ]
-            },
+              "gnx": "zxc.20260301130922.1",
+              "vh": "@clean templates/eget.toml.j2"
+            }
+          ]
+        },
+        {
+          "gnx": "zxc.20260211203747.1",
+          "vh": "nixos-uos-arm",
+          "children": [
             {
-              "gnx": "zxc.20260226193530.1",
-              "vh": "admin part 2",
+              "gnx": "zxc.20260211203811.1",
+              "vh": "@clean nixos-uos-arm.yml",
               "children": [
                 {
-                  "gnx": "zxc.20260226193604.1",
-                  "vh": "firewall",
+                  "gnx": "zxc.20260211203923.1",
+                  "vh": "content",
                   "children": [
                     {
-                      "gnx": "zxc.20260226193604.2",
-                      "vh": "check ansible_facts"
-                    },
-                    {
-                      "gnx": "zxc.20260227224730.1",
-                      "vh": "enable firewalls"
-                    },
-                    {
-                      "gnx": "zxc.20260226193604.3",
-                      "vh": "croc"
-                    },
-                    {
-                      "gnx": "zxc.20260226193604.4",
-                      "vh": "deskflow"
-                    },
-                    {
-                      "gnx": "zxc.20260226193604.5",
-                      "vh": "aria2"
-                    },
-                    {
-                      "gnx": "zxc.20260226193604.6",
-                      "vh": "dufs"
-                    },
-                    {
-                      "gnx": "zxc.20260226193604.7",
-                      "vh": "alist"
-                    },
-                    {
-                      "gnx": "zxc.20260227222048.1",
-                      "vh": "helix-ghost"
-                    },
-                    {
-                      "gnx": "zxc.20260227224509.1",
-                      "vh": "python"
-                    },
-                    {
-                      "gnx": "zxc.20260227234406.1",
-                      "vh": "mtranserver"
-                    },
-                    {
-                      "gnx": "zxc.20260301000713.1",
-                      "vh": "mpd"
-                    },
-                    {
-                      "gnx": "zxc.20260301183009.1",
-                      "vh": "kde connect"
+                      "gnx": "zxc.20260211204116.1",
+                      "vh": "facts"
                     }
                   ]
-                },
-                {
-                  "gnx": "zxc.20260228201243.1",
-                  "vh": "hostname"
-                },
-                {
-                  "gnx": "zxc.20260303203458.1",
-                  "vh": "scoop"
                 }
               ]
             }
           ]
         },
         {
-          "gnx": "zxc.20260301130922.1",
-          "vh": "@clean playbooks/templates/eget.toml.j2"
-        }
-      ]
-    },
-    {
-      "gnx": "zxc.20260211203747.1",
-      "vh": "nixos-uos-arm",
-      "children": [
-        {
-          "gnx": "zxc.20260211203811.1",
-          "vh": "@clean playbooks/nixos-uos-arm.yml",
+          "gnx": "zxc.20260220112215.1",
+          "vh": "wsl-debian",
           "children": [
             {
-              "gnx": "zxc.20260211203923.1",
-              "vh": "content",
+              "gnx": "zxc.20260220112240.1",
+              "vh": "@clean wsl-debian.yml",
               "children": [
                 {
-                  "gnx": "zxc.20260211204116.1",
+                  "gnx": "zxc.20260220112255.1",
                   "vh": "facts"
+                },
+                {
+                  "gnx": "zxc.20260220180651.1",
+                  "vh": "apt mirror"
+                },
+                {
+                  "gnx": "zxc.20260220112432.1",
+                  "vh": "apt",
+                  "children": [
+                    {
+                      "gnx": "zxc.20260220112706.1",
+                      "vh": "git"
+                    },
+                    {
+                      "gnx": "zxc.20260220112724.1",
+                      "vh": "editor"
+                    },
+                    {
+                      "gnx": "zxc.20260220181028.1",
+                      "vh": "video",
+                      "children": [
+                        {
+                          "gnx": "zxc.20260220181032.1",
+                          "vh": "viewer"
+                        }
+                      ]
+                    },
+                    {
+                      "gnx": "zxc.20260220134639.1",
+                      "vh": "download"
+                    },
+                    {
+                      "gnx": "zxc.20260220175034.1",
+                      "vh": "shell",
+                      "children": [
+                        {
+                          "gnx": "zxc.20260220211708.1",
+                          "vh": "prompt"
+                        }
+                      ]
+                    },
+                    {
+                      "gnx": "zxc.20260220182854.1",
+                      "vh": "system",
+                      "children": [
+                        {
+                          "gnx": "zxc.20260220213819.1",
+                          "vh": "fuzzy"
+                        },
+                        {
+                          "gnx": "zxc.20260220213540.1",
+                          "vh": "ls"
+                        },
+                        {
+                          "gnx": "zxc.20260220213425.1",
+                          "vh": "cd"
+                        },
+                        {
+                          "gnx": "zxc.20260220195000.1",
+                          "vh": "less"
+                        },
+                        {
+                          "gnx": "zxc.20260221000522.1",
+                          "vh": "top"
+                        }
+                      ]
+                    },
+                    {
+                      "gnx": "zxc.20260220184159.1",
+                      "vh": "encrypt"
+                    },
+                    {
+                      "gnx": "zxc.20260220191016.1",
+                      "vh": "dev",
+                      "children": [
+                        {
+                          "gnx": "zxc.20260220191020.1",
+                          "vh": "nodejs"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "gnx": "zxc.20260220174627.1",
+                  "vh": "chezmoi"
                 }
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "gnx": "zxc.20260220112215.1",
-      "vh": "wsl-debian",
-      "children": [
+        },
         {
-          "gnx": "zxc.20260220112240.1",
-          "vh": "@clean playbooks/wsl-debian.yml",
+          "gnx": "zxc.20260220163617.1",
+          "vh": "wsl-arch",
           "children": [
             {
-              "gnx": "zxc.20260220112255.1",
-              "vh": "facts"
-            },
-            {
-              "gnx": "zxc.20260220180651.1",
-              "vh": "apt mirror"
-            },
-            {
-              "gnx": "zxc.20260220112432.1",
-              "vh": "apt",
+              "gnx": "zxc.20260220163617.2",
+              "vh": "@clean wsl-arch.yml",
               "children": [
                 {
-                  "gnx": "zxc.20260220112706.1",
-                  "vh": "git"
+                  "gnx": "zxc.20260220163617.3",
+                  "vh": "facts"
                 },
                 {
-                  "gnx": "zxc.20260220112724.1",
-                  "vh": "editor"
+                  "gnx": "zxc.20260221001307.1",
+                  "vh": "pacman mirror"
                 },
                 {
-                  "gnx": "zxc.20260220181028.1",
-                  "vh": "video",
+                  "gnx": "zxc.20260220163617.4",
+                  "vh": "pacman",
                   "children": [
                     {
-                      "gnx": "zxc.20260220181032.1",
-                      "vh": "viewer"
-                    }
-                  ]
-                },
-                {
-                  "gnx": "zxc.20260220134639.1",
-                  "vh": "download"
-                },
-                {
-                  "gnx": "zxc.20260220175034.1",
-                  "vh": "shell",
-                  "children": [
-                    {
-                      "gnx": "zxc.20260220211708.1",
-                      "vh": "prompt"
-                    }
-                  ]
-                },
-                {
-                  "gnx": "zxc.20260220182854.1",
-                  "vh": "system",
-                  "children": [
-                    {
-                      "gnx": "zxc.20260220213819.1",
-                      "vh": "fuzzy"
+                      "gnx": "zxc.20260220163617.5",
+                      "vh": "git"
                     },
                     {
-                      "gnx": "zxc.20260220213540.1",
-                      "vh": "ls"
+                      "gnx": "zxc.20260220163617.6",
+                      "vh": "editor"
                     },
                     {
-                      "gnx": "zxc.20260220213425.1",
-                      "vh": "cd"
+                      "gnx": "zxc.20260220163617.7",
+                      "vh": "download"
                     },
                     {
-                      "gnx": "zxc.20260220195000.1",
-                      "vh": "less"
+                      "gnx": "zxc.20260220170903.1",
+                      "vh": "dotfiles"
                     },
                     {
-                      "gnx": "zxc.20260221000522.1",
-                      "vh": "top"
-                    }
-                  ]
-                },
-                {
-                  "gnx": "zxc.20260220184159.1",
-                  "vh": "encrypt"
-                },
-                {
-                  "gnx": "zxc.20260220191016.1",
-                  "vh": "dev",
-                  "children": [
-                    {
-                      "gnx": "zxc.20260220191020.1",
-                      "vh": "nodejs"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "gnx": "zxc.20260220174627.1",
-              "vh": "chezmoi"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "gnx": "zxc.20260220163617.1",
-      "vh": "wsl-arch",
-      "children": [
-        {
-          "gnx": "zxc.20260220163617.2",
-          "vh": "@clean playbooks/wsl-arch.yml",
-          "children": [
-            {
-              "gnx": "zxc.20260220163617.3",
-              "vh": "facts"
-            },
-            {
-              "gnx": "zxc.20260221001307.1",
-              "vh": "pacman mirror"
-            },
-            {
-              "gnx": "zxc.20260220163617.4",
-              "vh": "pacman",
-              "children": [
-                {
-                  "gnx": "zxc.20260220163617.5",
-                  "vh": "git"
-                },
-                {
-                  "gnx": "zxc.20260220163617.6",
-                  "vh": "editor"
-                },
-                {
-                  "gnx": "zxc.20260220163617.7",
-                  "vh": "download"
-                },
-                {
-                  "gnx": "zxc.20260220170903.1",
-                  "vh": "dotfiles"
-                },
-                {
-                  "gnx": "zxc.20260221001945.1",
-                  "vh": "video",
-                  "children": [
-                    {
-                      "gnx": "zxc.20260221001945.2",
-                      "vh": "viewer"
-                    }
-                  ]
-                },
-                {
-                  "gnx": "zxc.20260221001936.1",
-                  "vh": "shell",
-                  "children": [
-                    {
-                      "gnx": "zxc.20260221001936.2",
-                      "vh": "prompt"
-                    }
-                  ]
-                },
-                {
-                  "gnx": "zxc.20260221001925.1",
-                  "vh": "system",
-                  "children": [
-                    {
-                      "gnx": "zxc.20260221001925.2",
-                      "vh": "fuzzy"
+                      "gnx": "zxc.20260221001945.1",
+                      "vh": "video",
+                      "children": [
+                        {
+                          "gnx": "zxc.20260221001945.2",
+                          "vh": "viewer"
+                        }
+                      ]
                     },
                     {
-                      "gnx": "zxc.20260221001925.3",
-                      "vh": "ls"
+                      "gnx": "zxc.20260221001936.1",
+                      "vh": "shell",
+                      "children": [
+                        {
+                          "gnx": "zxc.20260221001936.2",
+                          "vh": "prompt"
+                        }
+                      ]
                     },
                     {
-                      "gnx": "zxc.20260221001925.4",
-                      "vh": "cd"
+                      "gnx": "zxc.20260221001925.1",
+                      "vh": "system",
+                      "children": [
+                        {
+                          "gnx": "zxc.20260221001925.2",
+                          "vh": "fuzzy"
+                        },
+                        {
+                          "gnx": "zxc.20260221001925.3",
+                          "vh": "ls"
+                        },
+                        {
+                          "gnx": "zxc.20260221001925.4",
+                          "vh": "cd"
+                        },
+                        {
+                          "gnx": "zxc.20260221001925.5",
+                          "vh": "less"
+                        },
+                        {
+                          "gnx": "zxc.20260221001925.6",
+                          "vh": "top"
+                        },
+                        {
+                          "gnx": "zxc.20260221014622.1",
+                          "vh": "info"
+                        },
+                        {
+                          "gnx": "zxc.20260221014730.1",
+                          "vh": "info"
+                        }
+                      ]
                     },
                     {
-                      "gnx": "zxc.20260221001925.5",
-                      "vh": "less"
-                    },
-                    {
-                      "gnx": "zxc.20260221001925.6",
-                      "vh": "top"
-                    },
-                    {
-                      "gnx": "zxc.20260221014622.1",
-                      "vh": "info"
-                    },
-                    {
-                      "gnx": "zxc.20260221014730.1",
-                      "vh": "info"
-                    }
-                  ]
-                },
-                {
-                  "gnx": "zxc.20260221002017.1",
-                  "vh": "dev",
-                  "children": [
-                    {
-                      "gnx": "zxc.20260221002017.2",
-                      "vh": "nodejs"
+                      "gnx": "zxc.20260221002017.1",
+                      "vh": "dev",
+                      "children": [
+                        {
+                          "gnx": "zxc.20260221002017.2",
+                          "vh": "nodejs"
+                        }
+                      ]
                     }
                   ]
                 }
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "gnx": "zxc.20260223143307.1",
-      "vh": "termux",
-      "children": [
+        },
         {
-          "gnx": "zxc.20260223143337.1",
-          "vh": "@clean playbooks/termux.yml",
+          "gnx": "zxc.20260223143307.1",
+          "vh": "termux",
           "children": [
             {
-              "gnx": "zxc.20260223143358.1",
-              "vh": "facts"
-            },
-            {
-              "gnx": "zxc.20260223183712.1",
-              "vh": "apt",
+              "gnx": "zxc.20260223143337.1",
+              "vh": "@clean termux.yml",
               "children": [
                 {
-                  "gnx": "zxc.20260223184022.1",
-                  "vh": "AI"
+                  "gnx": "zxc.20260223143358.1",
+                  "vh": "facts"
                 },
                 {
-                  "gnx": "zxc.20260223184533.1",
-                  "vh": "book"
-                },
-                {
-                  "gnx": "zxc.20260223230801.1",
-                  "vh": "chat"
-                },
-                {
-                  "gnx": "zxc.20260223190230.1",
-                  "vh": "dev",
+                  "gnx": "zxc.20260223183712.1",
+                  "vh": "apt",
                   "children": [
                     {
-                      "gnx": "zxc.20260223194734.1",
-                      "vh": "sqlite"
+                      "gnx": "zxc.20260223184022.1",
+                      "vh": "AI"
                     },
                     {
-                      "gnx": "zxc.20260223194403.1",
-                      "vh": "nodejs"
+                      "gnx": "zxc.20260223184533.1",
+                      "vh": "book"
                     },
                     {
-                      "gnx": "zxc.20260223193735.1",
-                      "vh": "markdown"
+                      "gnx": "zxc.20260223230801.1",
+                      "vh": "chat"
                     },
                     {
-                      "gnx": "zxc.20260223193600.1",
-                      "vh": "json"
+                      "gnx": "zxc.20260223190230.1",
+                      "vh": "dev",
+                      "children": [
+                        {
+                          "gnx": "zxc.20260223194734.1",
+                          "vh": "sqlite"
+                        },
+                        {
+                          "gnx": "zxc.20260223194403.1",
+                          "vh": "nodejs"
+                        },
+                        {
+                          "gnx": "zxc.20260223193735.1",
+                          "vh": "markdown"
+                        },
+                        {
+                          "gnx": "zxc.20260223193600.1",
+                          "vh": "json"
+                        },
+                        {
+                          "gnx": "zxc.20260223191413.1",
+                          "vh": "go"
+                        },
+                        {
+                          "gnx": "zxc.20260223191227.1",
+                          "vh": "haskell"
+                        },
+                        {
+                          "gnx": "zxc.20260223195211.1",
+                          "vh": "toml"
+                        },
+                        {
+                          "gnx": "zxc.20260223195242.1",
+                          "vh": "latex"
+                        },
+                        {
+                          "gnx": "zxc.20260223194458.1",
+                          "vh": "python"
+                        }
+                      ]
                     },
                     {
-                      "gnx": "zxc.20260223191413.1",
-                      "vh": "go"
+                      "gnx": "zxc.20260223194442.1",
+                      "vh": "document"
                     },
                     {
-                      "gnx": "zxc.20260223191227.1",
-                      "vh": "haskell"
+                      "gnx": "zxc.20260223184035.1",
+                      "vh": "download"
                     },
                     {
-                      "gnx": "zxc.20260223195211.1",
-                      "vh": "toml"
+                      "gnx": "zxc.20260223191650.1",
+                      "vh": "editor"
                     },
                     {
-                      "gnx": "zxc.20260223195242.1",
-                      "vh": "latex"
+                      "gnx": "zxc.20260223191428.1",
+                      "vh": "encrypt"
                     },
                     {
-                      "gnx": "zxc.20260223194458.1",
-                      "vh": "python"
+                      "gnx": "zxc.20260223191352.1",
+                      "vh": "image",
+                      "children": [
+                        {
+                          "gnx": "zxc.20260223193511.1",
+                          "vh": "edit"
+                        }
+                      ]
+                    },
+                    {
+                      "gnx": "zxc.20260223194614.1",
+                      "vh": "math"
+                    },
+                    {
+                      "gnx": "zxc.20260223190525.1",
+                      "vh": "fan"
+                    },
+                    {
+                      "gnx": "zxc.20260223230624.1",
+                      "vh": "dotfiles"
+                    },
+                    {
+                      "gnx": "zxc.20260223183940.1",
+                      "vh": "file manager"
+                    },
+                    {
+                      "gnx": "zxc.20260223190212.1",
+                      "vh": "git",
+                      "children": [
+                        {
+                          "gnx": "zxc.20260223191333.1",
+                          "vh": "tui"
+                        },
+                        {
+                          "gnx": "zxc.20260223190214.1",
+                          "vh": "diff"
+                        },
+                        {
+                          "gnx": "zxc.20260223191310.1",
+                          "vh": "utils"
+                        },
+                        {
+                          "gnx": "zxc.20260223191323.1",
+                          "vh": "lfs"
+                        }
+                      ]
+                    },
+                    {
+                      "gnx": "zxc.20260223195543.1",
+                      "vh": "translate"
+                    },
+                    {
+                      "gnx": "zxc.20260223195612.1",
+                      "vh": "typing"
+                    },
+                    {
+                      "gnx": "zxc.20260223190157.1",
+                      "vh": "share"
+                    },
+                    {
+                      "gnx": "zxc.20260223184131.1",
+                      "vh": "shell",
+                      "children": [
+                        {
+                          "gnx": "zxc.20260223195659.1",
+                          "vh": "which"
+                        },
+                        {
+                          "gnx": "zxc.20260223195452.1",
+                          "vh": "screen"
+                        },
+                        {
+                          "gnx": "zxc.20260223195725.1",
+                          "vh": "cd"
+                        },
+                        {
+                          "gnx": "zxc.20260223195222.1",
+                          "vh": "man"
+                        },
+                        {
+                          "gnx": "zxc.20260223194746.1",
+                          "vh": "prompt"
+                        },
+                        {
+                          "gnx": "zxc.20260223194723.1",
+                          "vh": "cp"
+                        },
+                        {
+                          "gnx": "zxc.20260223194651.1",
+                          "vh": "rename"
+                        },
+                        {
+                          "gnx": "zxc.20260223193937.1",
+                          "vh": "snippet"
+                        },
+                        {
+                          "gnx": "zxc.20260223194636.1",
+                          "vh": "grep"
+                        },
+                        {
+                          "gnx": "zxc.20260223185957.1",
+                          "vh": "fuzzy"
+                        },
+                        {
+                          "gnx": "zxc.20260223190008.1",
+                          "vh": "completion"
+                        },
+                        {
+                          "gnx": "zxc.20260223184136.1",
+                          "vh": "history"
+                        },
+                        {
+                          "gnx": "zxc.20260223184355.1",
+                          "vh": "pager"
+                        },
+                        {
+                          "gnx": "zxc.20260223193925.1",
+                          "vh": "utils"
+                        }
+                      ]
+                    },
+                    {
+                      "gnx": "zxc.20260223184148.1",
+                      "vh": "system",
+                      "children": [
+                        {
+                          "gnx": "zxc.20260223201914.1",
+                          "vh": "package manager"
+                        },
+                        {
+                          "gnx": "zxc.20260223193528.1",
+                          "vh": "network"
+                        },
+                        {
+                          "gnx": "zxc.20260223191638.1",
+                          "vh": "ping"
+                        },
+                        {
+                          "gnx": "zxc.20260223190554.1",
+                          "vh": "font"
+                        },
+                        {
+                          "gnx": "zxc.20260223190308.1",
+                          "vh": "dns"
+                        },
+                        {
+                          "gnx": "zxc.20260223190428.1",
+                          "vh": "ls"
+                        },
+                        {
+                          "gnx": "zxc.20260223190437.1",
+                          "vh": "stats"
+                        },
+                        {
+                          "gnx": "zxc.20260223193457.1",
+                          "vh": "top"
+                        },
+                        {
+                          "gnx": "zxc.20260223190453.1",
+                          "vh": "find"
+                        },
+                        {
+                          "gnx": "zxc.20260223190245.1",
+                          "vh": "du"
+                        },
+                        {
+                          "gnx": "zxc.20260223190340.1",
+                          "vh": "df"
+                        },
+                        {
+                          "gnx": "zxc.20260223184107.1",
+                          "vh": "archive"
+                        }
+                      ]
+                    },
+                    {
+                      "gnx": "zxc.20260223194421.1",
+                      "vh": "ssh"
+                    },
+                    {
+                      "gnx": "zxc.20260223194007.1",
+                      "vh": "rss"
+                    },
+                    {
+                      "gnx": "zxc.20260223190505.1",
+                      "vh": "video",
+                      "children": [
+                        {
+                          "gnx": "zxc.20260223190509.1",
+                          "vh": "edit"
+                        }
+                      ]
                     }
                   ]
                 },
                 {
-                  "gnx": "zxc.20260223194442.1",
-                  "vh": "document"
-                },
-                {
-                  "gnx": "zxc.20260223184035.1",
-                  "vh": "download"
-                },
-                {
-                  "gnx": "zxc.20260223191650.1",
-                  "vh": "editor"
-                },
-                {
-                  "gnx": "zxc.20260223191428.1",
-                  "vh": "encrypt"
-                },
-                {
-                  "gnx": "zxc.20260223191352.1",
-                  "vh": "image",
+                  "gnx": "zxc.20260223202600.1",
+                  "vh": "pip",
                   "children": [
                     {
-                      "gnx": "zxc.20260223193511.1",
-                      "vh": "edit"
+                      "gnx": "zxc.20260223205958.1",
+                      "vh": "pipx"
                     }
                   ]
                 },
                 {
-                  "gnx": "zxc.20260223194614.1",
-                  "vh": "math"
-                },
-                {
-                  "gnx": "zxc.20260223190525.1",
-                  "vh": "fan"
-                },
-                {
-                  "gnx": "zxc.20260223230624.1",
-                  "vh": "dotfiles"
-                },
-                {
-                  "gnx": "zxc.20260223183940.1",
-                  "vh": "file manager"
-                },
-                {
-                  "gnx": "zxc.20260223190212.1",
-                  "vh": "git",
+                  "gnx": "zxc.20260223210307.1",
+                  "vh": "pipx",
                   "children": [
                     {
-                      "gnx": "zxc.20260223191333.1",
-                      "vh": "tui"
+                      "gnx": "zxc.20260223210417.1",
+                      "vh": "copyparty"
                     },
                     {
-                      "gnx": "zxc.20260223190214.1",
-                      "vh": "diff"
+                      "gnx": "zxc.20260223210420.1",
+                      "vh": "mdformat"
                     },
                     {
-                      "gnx": "zxc.20260223191310.1",
-                      "vh": "utils"
-                    },
-                    {
-                      "gnx": "zxc.20260223191323.1",
-                      "vh": "lfs"
+                      "gnx": "zxc.20260223210412.1",
+                      "vh": "ad"
                     }
                   ]
-                },
-                {
-                  "gnx": "zxc.20260223195543.1",
-                  "vh": "translate"
-                },
-                {
-                  "gnx": "zxc.20260223195612.1",
-                  "vh": "typing"
-                },
-                {
-                  "gnx": "zxc.20260223190157.1",
-                  "vh": "share"
-                },
-                {
-                  "gnx": "zxc.20260223184131.1",
-                  "vh": "shell",
-                  "children": [
-                    {
-                      "gnx": "zxc.20260223195659.1",
-                      "vh": "which"
-                    },
-                    {
-                      "gnx": "zxc.20260223195452.1",
-                      "vh": "screen"
-                    },
-                    {
-                      "gnx": "zxc.20260223195725.1",
-                      "vh": "cd"
-                    },
-                    {
-                      "gnx": "zxc.20260223195222.1",
-                      "vh": "man"
-                    },
-                    {
-                      "gnx": "zxc.20260223194746.1",
-                      "vh": "prompt"
-                    },
-                    {
-                      "gnx": "zxc.20260223194723.1",
-                      "vh": "cp"
-                    },
-                    {
-                      "gnx": "zxc.20260223194651.1",
-                      "vh": "rename"
-                    },
-                    {
-                      "gnx": "zxc.20260223193937.1",
-                      "vh": "snippet"
-                    },
-                    {
-                      "gnx": "zxc.20260223194636.1",
-                      "vh": "grep"
-                    },
-                    {
-                      "gnx": "zxc.20260223185957.1",
-                      "vh": "fuzzy"
-                    },
-                    {
-                      "gnx": "zxc.20260223190008.1",
-                      "vh": "completion"
-                    },
-                    {
-                      "gnx": "zxc.20260223184136.1",
-                      "vh": "history"
-                    },
-                    {
-                      "gnx": "zxc.20260223184355.1",
-                      "vh": "pager"
-                    },
-                    {
-                      "gnx": "zxc.20260223193925.1",
-                      "vh": "utils"
-                    }
-                  ]
-                },
-                {
-                  "gnx": "zxc.20260223184148.1",
-                  "vh": "system",
-                  "children": [
-                    {
-                      "gnx": "zxc.20260223201914.1",
-                      "vh": "package manager"
-                    },
-                    {
-                      "gnx": "zxc.20260223193528.1",
-                      "vh": "network"
-                    },
-                    {
-                      "gnx": "zxc.20260223191638.1",
-                      "vh": "ping"
-                    },
-                    {
-                      "gnx": "zxc.20260223190554.1",
-                      "vh": "font"
-                    },
-                    {
-                      "gnx": "zxc.20260223190308.1",
-                      "vh": "dns"
-                    },
-                    {
-                      "gnx": "zxc.20260223190428.1",
-                      "vh": "ls"
-                    },
-                    {
-                      "gnx": "zxc.20260223190437.1",
-                      "vh": "stats"
-                    },
-                    {
-                      "gnx": "zxc.20260223193457.1",
-                      "vh": "top"
-                    },
-                    {
-                      "gnx": "zxc.20260223190453.1",
-                      "vh": "find"
-                    },
-                    {
-                      "gnx": "zxc.20260223190245.1",
-                      "vh": "du"
-                    },
-                    {
-                      "gnx": "zxc.20260223190340.1",
-                      "vh": "df"
-                    },
-                    {
-                      "gnx": "zxc.20260223184107.1",
-                      "vh": "archive"
-                    }
-                  ]
-                },
-                {
-                  "gnx": "zxc.20260223194421.1",
-                  "vh": "ssh"
-                },
-                {
-                  "gnx": "zxc.20260223194007.1",
-                  "vh": "rss"
-                },
-                {
-                  "gnx": "zxc.20260223190505.1",
-                  "vh": "video",
-                  "children": [
-                    {
-                      "gnx": "zxc.20260223190509.1",
-                      "vh": "edit"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "gnx": "zxc.20260223202600.1",
-              "vh": "pip",
-              "children": [
-                {
-                  "gnx": "zxc.20260223205958.1",
-                  "vh": "pipx"
-                }
-              ]
-            },
-            {
-              "gnx": "zxc.20260223210307.1",
-              "vh": "pipx",
-              "children": [
-                {
-                  "gnx": "zxc.20260223210417.1",
-                  "vh": "copyparty"
-                },
-                {
-                  "gnx": "zxc.20260223210420.1",
-                  "vh": "mdformat"
-                },
-                {
-                  "gnx": "zxc.20260223210412.1",
-                  "vh": "ad"
                 }
               ]
             }
@@ -2179,25 +2185,25 @@
   },
   "uas": {
     "zxc.20260121205603.1": {
-      "_mod_time": 1773043059.165
+      "_mod_time": 1773125762.444
     },
     "zxc.20260301130922.1": {
-      "_mod_time": 1773042928.727
+      "_mod_time": 1773102893.662
     },
     "zxc.20260211203811.1": {
-      "_mod_time": 1770963329.563
+      "_mod_time": 1773102893.66
     },
     "zxc.20260220112240.1": {
-      "_mod_time": 1772001583.862
+      "_mod_time": 1773102893.664
     },
     "zxc.20260220163617.2": {
-      "_mod_time": 1772001583.862
+      "_mod_time": 1773102893.664
     },
     "zxc.20260223143337.1": {
-      "_mod_time": 1772001583.862
+      "_mod_time": 1773102893.662
     },
     "zxc.20260126204754.1": {
-      "_mod_time": 1771850709.354
+      "_mod_time": 1773102893.657
     }
   }
 }
