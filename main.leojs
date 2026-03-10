@@ -1186,6 +1186,16 @@
                     {
                       "gnx": "zxc.20260303203458.1",
                       "vh": "scoop"
+                    },
+                    {
+                      "gnx": "User.20260310164307.1",
+                      "vh": "services",
+                      "children": [
+                        {
+                          "gnx": "User.20260310164316.1",
+                          "vh": "everything"
+                        }
+                      ]
                     }
                   ]
                 }
@@ -2053,6 +2063,7 @@
     "zxc.20260301183009.1": "- name: Check current source folder\n  ansible.windows.win_stat:\n    path: C:\\Users\\User\\scoop\\apps\\kdeconnect\\current\n  register: path\n- name: Kdeconnect firewall rule\n  community.windows.win_firewall_rule:\n    name: kdeconnectd.exe\n    program: \"{{ path.stat.lnk_source if path.stat.exists }}\\\\bin\\\\kdeconnectd.exe\"\n    action: allow\n    protocol: tcp\n    direction: in\n    state: \"{{ 'present' if path.stat.exists is true else 'absent' }}\"\n    enabled: true\n- name: Kdeconnect firewall rule\n  community.windows.win_firewall_rule:\n    name: kdeconnectd.exe udp\n    program: \"{{ path.stat.lnk_source if path.stat.exists }}\\\\bin\\\\kdeconnectd.exe\"\n    action: allow\n    protocol: udp\n    direction: in\n    state: \"{{ 'present' if path.stat.exists is true else 'absent' }}\"\n    enabled: true\n",
     "zxc.20260228201243.1": "- name: Set hostname\n  tags: hostname\n  block:\n    - name: Set hostname\n      ansible.windows.win_hostname:\n        name: \"{{ my_hostname if my_hostname is defined else 'nuc' }}\"\n      register: res\n    - name: Reboot\n      ansible.windows.win_reboot:\n      when: res.reboot_required",
     "zxc.20260303203458.1": "- name: Install global scoop packages\n  tags: global-scoop\n  community.windows.win_scoop:\n    name: '{{ item }}'\n    global: true\n    no_cache: true\n  register: result\n  retries: 3\n  delay: 5\n  until: result is not failed\n  loop:\n    - ldplayer",
+    "User.20260310164316.1": "- name: Create everything service\n  tags: services\n  ansible.windows.win_service:\n    name: Everything\n    state: started\n    path: C:\\Users\\User\\scoop\\apps\\everything\\current\\everything.exe -svc",
     "zxc.20260301130922.1": "[global]\ntarget = \"~/.local/bin\"\ngithub_token = {{ gopass \"github/ourgal/token\" | quote }}",
     "zxc.20260211203811.1": "---\n@others\n",
     "zxc.20260211203923.1": "- name: Install uos via nixos live cd\n  hosts: nixos-live\n  tasks:\n    @others\n",
@@ -2182,7 +2193,7 @@
   },
   "uas": {
     "zxc.20260121205603.1": {
-      "_mod_time": 1773131950.693
+      "_mod_time": 1773132470.751
     },
     "zxc.20260301130922.1": {
       "_mod_time": 1773102893.662

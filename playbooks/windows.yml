@@ -1197,3 +1197,9 @@
       until: result is not failed
       loop:
         - ldplayer
+    - name: Create everything service
+      tags: services
+      ansible.windows.win_service:
+        name: Everything
+        state: started
+        path: C:\Users\User\scoop\apps\everything\current\everything.exe -svc
