@@ -1,6 +1,8 @@
 ---
 - name: Configure windows admin
-  hosts: nuc-windows-admin
+  hosts:
+    - nuc-windows-admin
+    - bed-windows-admin
   tags: admin
   tasks:
     - name: Debug variables
@@ -175,7 +177,9 @@
     - name: Reboot
       ansible.windows.win_reboot:
 - name: Configure windows user
-  hosts: nuc-windows-user
+  hosts:
+    - nuc-windows-user
+    - bed-windows-user
   tags: user
   tasks:
     - name: Install aria2 and lessmsi via scoop
@@ -188,6 +192,7 @@
       delay: 5
       until: result is not failed
       loop:
+        - "{{ (ansible_facts.nodename in ['nuc', 'bed']) | ternary('aria2', '') }}"
         - lessmsi
     - name: Update scoop config
       tags: scoop-config
@@ -208,7 +213,7 @@
           vars:
             config:
               use_lessmsi: true
-              aria2-enabled: false
+              aria2-enabled: "{{ true if ansible_facts.nodename in ['nuc', 'bed'] else false }}"
               aria2-warning-enabled: false
               use_sqlite_cache: true
               force_update: true
@@ -222,7 +227,7 @@
           vars:
             config:
               use_lessmsi: true
-              aria2-enabled: false
+              aria2-enabled: "{{ true if ansible_facts.nodename in ['nuc', 'bed'] else false }}"
               aria2-warning-enabled: false
               use_sqlite_cache: true
               force_update: true
@@ -418,7 +423,7 @@
         - pget
         - wget2
         - wget
-        - aria2
+        - "{{ (ansible_facts.nodename in ['nuc', 'bed']) | ternary('', 'aria2') }}"
         - gpg
         - win-gpg-agent
         - openssl
@@ -766,7 +771,9 @@
         - pywinauto
 
 - name: Configure windows game user
-  hosts: nuc-windows-game
+  hosts:
+    - nuc-windows-game
+    - bed-windows-game
   tags: game
   tasks:
     - name: Debug variables
@@ -782,6 +789,7 @@
       delay: 5
       until: result is not failed
       loop:
+        - "{{ (ansible_facts.nodename in ['nuc', 'bed']) | ternary('aria2', '') }}"
         - lessmsi
     - name: Update scoop config
       tags: scoop-config
@@ -802,7 +810,7 @@
           vars:
             config:
               use_lessmsi: true
-              aria2-enabled: false
+              aria2-enabled: "{{ true if ansible_facts.nodename in ['nuc', 'bed'] else false }}"
               aria2-warning-enabled: false
               use_sqlite_cache: true
               force_update: true
@@ -816,7 +824,7 @@
           vars:
             config:
               use_lessmsi: true
-              aria2-enabled: false
+              aria2-enabled: "{{ true if ansible_facts.nodename in ['nuc', 'bed'] else false }}"
               aria2-warning-enabled: false
               use_sqlite_cache: true
               force_update: true
@@ -933,7 +941,9 @@
         name: bluestacks
         state: latest
 - name: Configure windows admin
-  hosts: nuc-windows-admin
+  hosts:
+    - nuc-windows-admin
+    - bed-windows-admin
   tags: admin
   tasks:
     - name: Windows firewall rules
