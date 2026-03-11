@@ -1,10 +1,7 @@
 ---
 - name: Configure windows admin
-  hosts:
-    - nuc-windows-admin
-    - bed-windows-admin
-    - work1-windows-admin
-    - work2-windows-admin
+  hosts: windows
+  remote_user: admin
   ignore_unreachable: true
   tags: admin
   tasks:
@@ -158,11 +155,8 @@
     - name: Reboot
       ansible.windows.win_reboot:
 - name: Configure windows user
-  hosts:
-    - nuc-windows-user
-    - bed-windows-user
-    - work1-windows-user
-    - work2-windows-user
+  hosts: windows
+  remote_user: user
   ignore_unreachable: true
   tags: user
   tasks:
@@ -778,11 +772,8 @@
         - pywinauto
 
 - name: Configure windows game user
-  hosts:
-    - nuc-windows-game
-    - bed-windows-game
-    - work1-windows-game
-    - work2-windows-game
+  hosts: windows
+  remote_user: game
   ignore_unreachable: true
   tags: game
   tasks:
@@ -929,11 +920,8 @@
         name: bluestacks
         state: latest
 - name: Configure windows admin
-  hosts:
-    - nuc-windows-admin
-    - bed-windows-admin
-    - work1-windows-admin
-    - work2-windows-admin
+  hosts: windows
+  remote_user: admin
   ignore_unreachable: true
   tags: admin
   tasks:
