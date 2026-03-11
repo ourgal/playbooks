@@ -359,6 +359,7 @@
         - vim
         - helix
         - neovim
+        - fresh
         - ffmpeg
         - git-annex
         - everything-cli
