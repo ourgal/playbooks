@@ -3,7 +3,14 @@
   hosts:
     - nuc-windows-admin
     - bed-windows-admin
+    - work1-windows-admin
+    - work2-windows-admin
   tags: admin
+  pre_tasks:
+    - ansible.windows.win_ping:
+      ignore_errors: true
+    - ansible.builtin.ping:
+      ignore_errors: true
   tasks:
     - name: Debug variables
       ansible.builtin.debug:
@@ -158,7 +165,14 @@
   hosts:
     - nuc-windows-user
     - bed-windows-user
+    - work1-windows-user
+    - work2-windows-user
   tags: user
+  pre_tasks:
+    - ansible.windows.win_ping:
+      ignore_errors: true
+    - ansible.builtin.ping:
+      ignore_errors: true
   tasks:
     - name: Install aria2 and lessmsi via scoop
       community.windows.win_scoop:
@@ -776,7 +790,14 @@
   hosts:
     - nuc-windows-game
     - bed-windows-game
+    - work1-windows-game
+    - work2-windows-game
   tags: game
+  pre_tasks:
+    - ansible.windows.win_ping:
+      ignore_errors: true
+    - ansible.builtin.ping:
+      ignore_errors: true
   tasks:
     - name: Debug variables
       ansible.builtin.debug:
@@ -924,7 +945,14 @@
   hosts:
     - nuc-windows-admin
     - bed-windows-admin
+    - work1-windows-admin
+    - work2-windows-admin
   tags: admin
+  pre_tasks:
+    - ansible.windows.win_ping:
+      ignore_errors: true
+    - ansible.builtin.ping:
+      ignore_errors: true
   tasks:
     - name: Windows firewall rules
       tags: firewall
