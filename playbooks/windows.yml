@@ -49,22 +49,34 @@
       loop:
         - extras
         - nerd-fonts
-    - name: Enable Virtual Machine Platform
+    - name: WSL
       tags: wsl
-      ansible.windows.win_optional_feature:
-        name: VirtualMachinePlatform
-        state: present
-      register: vmp_status
-    - name: Install Microsoft Subsystem for Linux
-      tags: wsl
-      ansible.windows.win_optional_feature:
-        name: Microsoft-Windows-Subsystem-Linux
-        state: present
-      register: wsl_status
-    - name: Reboot if installing Linux Subsytem as feature requires it
-      tags: wsl
-      ansible.windows.win_reboot:
-      when: wsl_status.reboot_required or vmp_status.reboot_required
+      block:
+        - name: Enable Virtual Machine Platform
+          ansible.windows.win_optional_feature:
+            name: VirtualMachinePlatform
+            state: present
+          register: vmp_status
+        - name: Enable hyper-v
+          ansible.windows.win_shell: bcdedit /set hypersivoralaunchtype auto
+          when: vmp_status is failed
+        - name: Reboot for hyper-v
+          ansible.windows.win_reboot:
+          when: vmp_status is failed
+        - name: Enable Virtual Machine Platform again
+          ansible.windows.win_optional_feature:
+            name: VirtualMachinePlatform
+            state: present
+          register: vmp_status
+          when: vmp_status is failed
+        - name: Install Microsoft Subsystem for Linux
+          ansible.windows.win_optional_feature:
+            name: Microsoft-Windows-Subsystem-Linux
+            state: present
+          register: wsl_status
+        - name: Reboot if installing Linux Subsytem as feature requires it
+          ansible.windows.win_reboot:
+          when: wsl_status.reboot_required or vmp_status.reboot_required
     - name: Hide admin account
       tags: hide-admin
       ansible.windows.win_regedit:
