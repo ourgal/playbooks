@@ -5,6 +5,8 @@
   ignore_unreachable: true
   tags: admin
   tasks:
+    - name: Gather facts
+      ansible.builtin.gather_facts:
     - name: Debug variables
       ansible.builtin.debug:
         var: ansible_facts
@@ -172,6 +174,11 @@
   ignore_unreachable: true
   tags: user
   tasks:
+    - name: Gather facts
+      ansible.builtin.gather_facts:
+    - name: Debug variables
+      ansible.builtin.debug:
+        var: ansible_facts
     - name: Install aria2 and lessmsi via scoop
       community.windows.win_scoop:
         name: '{{ item }}'
@@ -789,6 +796,8 @@
   ignore_unreachable: true
   tags: game
   tasks:
+    - name: Gather facts
+      ansible.builtin.gather_facts:
     - name: Debug variables
       ansible.builtin.debug:
         var: ansible_facts
@@ -937,6 +946,11 @@
   ignore_unreachable: true
   tags: admin
   tasks:
+    - name: Gather facts
+      ansible.builtin.gather_facts:
+    - name: Debug variables
+      ansible.builtin.debug:
+        var: ansible_facts
     - name: Windows firewall rules
       tags: firewall
       block:

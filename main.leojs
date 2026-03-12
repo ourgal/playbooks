@@ -225,6 +225,9 @@
                   "vh": "user part",
                   "children": [
                     {
+                      "gnx": "zxc.20260125024619.1"
+                    },
+                    {
                       "gnx": "zxc.20260125123950.1",
                       "vh": "scoop",
                       "children": [
@@ -1094,8 +1097,7 @@
                   "vh": "game part",
                   "children": [
                     {
-                      "gnx": "zxc.20260215142414.1",
-                      "vh": "facts"
+                      "gnx": "zxc.20260125024619.1"
                     },
                     {
                       "gnx": "zxc.20260215141909.1",
@@ -1141,6 +1143,9 @@
                   "gnx": "zxc.20260226193530.1",
                   "vh": "admin part 2",
                   "children": [
+                    {
+                      "gnx": "zxc.20260125024619.1"
+                    },
                     {
                       "gnx": "zxc.20260226193604.1",
                       "vh": "firewall",
@@ -1858,7 +1863,7 @@
     "zxc.20260121205603.1": "---\n@others\n",
     "zxc.20260125024248.1": "- name: Configure windows admin\n  hosts: windows\n  remote_user: admin\n  ignore_unreachable: true\n  tags: admin\n  tasks:\n    @others\n  handlers:\n    << reboot >>\n",
     "zxc.20260219201707.1": "- name: Reboot\n  ansible.windows.win_reboot:\n",
-    "zxc.20260125024619.1": "- name: Debug variables\n  ansible.builtin.debug:\n    var: ansible_facts\n",
+    "zxc.20260125024619.1": "- name: Gather facts\n  ansible.builtin.gather_facts:\n- name: Debug variables\n  ansible.builtin.debug:\n    var: ansible_facts\n",
     "zxc.20260126223153.1": "- name: Install choco pacakges\n  tags: choco-install\n  chocolatey.chocolatey.win_chocolatey:\n    name: \"{{ item }}\"\n    state: latest\n  loop:\n    @others\n",
     "zxc.20260126014227.1": "- firefox\n- mpvio\n- visualstudio2026-workload-vctools\n- weasel\n- calibre\n- winfsp # rclone\n- steam\n- epicgameslauncher\n",
     "zxc.20260126223217.1": "- name: Uninstall choco pacakges\n  tags: choco-uninstall\n  chocolatey.chocolatey.win_chocolatey:\n    name: \"{{ item }}\"\n    state: absent\n  loop:\n    @others\n",
@@ -2065,7 +2070,6 @@
     "zxc.20260227205212.1": "- name: Install pip packages\n  tags: pip-install\n  ansible.windows.win_shell: \"pip install --user {{ item }}\"\n  loop:\n    @others\n\n",
     "zxc.20260227205247.1": "- pynvim\n- SimpleWebSocketServer\n- python-slugify\n- pywinauto",
     "zxc.20260215141824.1": "- name: Configure windows game user\n  hosts: windows\n  remote_user: game\n  ignore_unreachable: true\n  tags: game\n  tasks:\n    @others\n",
-    "zxc.20260215142414.1": "- name: Debug variables\n  ansible.builtin.debug:\n    var: ansible_facts\n",
     "zxc.20260215142237.2": "- name: Add aki bucket\n  community.windows.win_scoop_bucket:\n    name: aki\n    repo: https://github.com/akirco/aki-apps\n    state: present\n",
     "zxc.20260215142237.3": "- name: Install wegame\n  tags: wegame\n  community.windows.win_scoop:\n    name: wegame\n    state: present\n    global: false\n    no_cache: true\n  register: result\n  retries: 3\n  delay: 5\n  until: result is not failed\n",
     "zxc.20260215142237.4": "- name: Remove aki bucket\n  community.windows.win_scoop_bucket:\n    name: aki\n    repo: https://github.com/akirco/aki-apps\n    state: absent\n",
@@ -2218,7 +2222,7 @@
   },
   "uas": {
     "zxc.20260121205603.1": {
-      "_mod_time": 1773275219.577
+      "_mod_time": 1773276422.743
     },
     "zxc.20260301130922.1": {
       "_mod_time": 1773102893.662
