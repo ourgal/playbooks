@@ -659,26 +659,40 @@
       until: result is not failed
       loop:
         - psmux
-    - name: Add pipx bin path to PATH
-      tags: path
-      ansible.windows.win_path:
-        state: present
-        scope: user
-        elements: '%userprofile%\.local\bin'
-    - name: Install pipx packages
-      tags: pipx-install
-      ansible.windows.win_shell: "pipx install {{ item }}"
-      loop:
-        - advance-touch
-        - xonsh[full]
-        - mutagen
-        - jedi-language-server
-        - python-lsp-server
-        - basedpyright
-        - ansible
-        - ansible-lint
-        - grip
-        - names
+    - name: Pipx
+      tags: pipx
+      block:
+        - name: Add pipx bin path to PATH
+          ansible.windows.win_path:
+            state: present
+            scope: user
+            elements: '%userprofile%\.local\bin'
+        - name: Set pip config
+          ansible.windows.win_copy:
+            dest: "{{ ansible_facts.env.APPDATA }}\\.pip\\pip.ini"
+            content: |
+              [global]
+              index-url = https://mirrors.cernet.edu.cn/pypi/web/simple/
+              [install]
+              trusted-host = mirrors.cernet.edu.cn
+        - name: Install pipx packages
+          tags: pipx-install
+          ansible.windows.win_shell: "pipx install {{ item }}"
+          loop:
+            - advance-touch
+            - xonsh[full]
+            - mutagen
+            - jedi-language-server
+            - python-lsp-server
+            - basedpyright
+            - ansible
+            - ansible-lint
+            - grip
+            - names
+        - name: Remove pip config
+          ansible.windows.win_file:
+            path: "{{ ansible_facts.env.APPDATA }}\\.pip\\pip.ini"
+            state: absent
     - name: Add cargo bin path to PATH
       tags: path
       ansible.windows.win_path:

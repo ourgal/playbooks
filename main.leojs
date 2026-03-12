@@ -924,6 +924,10 @@
                           "vh": "add to Path"
                         },
                         {
+                          "gnx": "zxc.20260312203131.1",
+                          "vh": "pip conf"
+                        },
+                        {
                           "gnx": "zxc.20260125132006.1",
                           "vh": "install packages",
                           "children": [
@@ -964,6 +968,10 @@
                               "vh": "names"
                             }
                           ]
+                        },
+                        {
+                          "gnx": "zxc.20260312204932.1",
+                          "vh": "remove pip conf"
                         }
                       ]
                     },
@@ -2040,7 +2048,9 @@
     "zxc.20260311112155.1": "- name: Add extras-plus bucket\n  community.windows.win_scoop_bucket:\n    name: extras-plus\n    repo: https://github.com/Scoopforge/Extras-Plus\n    state: present",
     "zxc.20260311112217.1": "- name: Add extras-cn bucket\n  community.windows.win_scoop_bucket:\n    name: extras-cn\n    repo: https://github.com/Scoopforge/Extras-CN\n    state: present",
     "zxc.20260311112826.1": "- name: Add psmux bucket\n  community.windows.win_scoop_bucket:\n    name: psmux\n    repo: https://github.com/marlocarlo/scoop-psmux\n    state: present\n- name: Install other packages via scoop\n  community.windows.win_scoop:\n    name: \"{{ item }}\"\n    global: false\n    no_cache: true\n  register: result\n  retries: 3\n  delay: 5\n  until: result is not failed\n  loop:\n    - psmux\n",
-    "zxc.20260125125341.1": "- name: Add pipx bin path to PATH\n  tags: path\n  ansible.windows.win_path:\n    state: present\n    scope: user\n    elements: '%userprofile%\\.local\\bin'\n",
+    "zxc.20260125125332.1": "- name: Pipx\n  tags: pipx\n  block:\n    @others",
+    "zxc.20260125125341.1": "- name: Add pipx bin path to PATH\n  ansible.windows.win_path:\n    state: present\n    scope: user\n    elements: '%userprofile%\\.local\\bin'\n",
+    "zxc.20260312203131.1": "- name: Set pip config\n  ansible.windows.win_copy:\n    dest: \"{{ ansible_facts.env.APPDATA }}\\\\.pip\\\\pip.ini\"\n    content: |\n      [global]\n      index-url = https://mirrors.cernet.edu.cn/pypi/web/simple/\n      [install]\n      trusted-host = mirrors.cernet.edu.cn",
     "zxc.20260125132006.1": "- name: Install pipx packages\n  tags: pipx-install\n  ansible.windows.win_shell: \"pipx install {{ item }}\"\n  loop:\n    @others\n",
     "zxc.20260126223811.1": "- advance-touch\n",
     "zxc.20260126231151.1": "- xonsh[full]\n",
@@ -2051,6 +2061,7 @@
     "zxc.20260218023019.1": "- ansible\n- ansible-lint\n",
     "zxc.20260218025808.1": "- grip\n",
     "zxc.20260222203819.1": "- names\n",
+    "zxc.20260312204932.1": "- name: Remove pip config\n  ansible.windows.win_file:\n    path: \"{{ ansible_facts.env.APPDATA }}\\\\.pip\\\\pip.ini\"\n    state: absent",
     "zxc.20260214133505.1": "- name: Add cargo bin path to PATH\n  tags: path\n  ansible.windows.win_path:\n    state: present\n    scope: user\n    elements: '%userprofile%\\.cargo\\bin'\n",
     "zxc.20260214134044.1": "- name: Install cargo packages\n  tags: cargo-install\n  ansible.windows.win_shell: \"cargo install --locked --git {{ item }}\"\n  loop:\n    @others\n",
     "zxc.20260214134128.1": "- https://github.com/estin/simple-completion-language-server.git\n",
@@ -2231,7 +2242,7 @@
   },
   "uas": {
     "zxc.20260121205603.1": {
-      "_mod_time": 1773318458.457
+      "_mod_time": 1773319828.257
     },
     "zxc.20260301130922.1": {
       "_mod_time": 1773102893.662
