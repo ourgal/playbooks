@@ -78,7 +78,10 @@
           register: wsl_status
         - name: Reboot if installing Linux Subsytem as feature requires it
           ansible.windows.win_reboot:
-          when: (wsl_status.reboot_required is defined and wsl_status.reboot_required) or (vmp_status.reboot_required is defined and vmp_status.reboot_required) or (vmp_again_status.reboot_required is defined and vmp_again_status.reboot_required)
+          when: >
+            (wsl_status.reboot_required is defined and wsl_status.reboot_required) or
+            (vmp_status.reboot_required is defined and vmp_status.reboot_required) or
+            (vmp_again_status.reboot_required is defined and vmp_again_status.reboot_required)
     - name: Hide admin account
       tags: hide-admin
       ansible.windows.win_regedit:
