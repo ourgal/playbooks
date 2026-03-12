@@ -984,6 +984,10 @@
                           "vh": "add to Path"
                         },
                         {
+                          "gnx": "zxc.20260312205223.1",
+                          "vh": "cargo conf"
+                        },
+                        {
                           "gnx": "zxc.20260214134044.1",
                           "vh": "install packages locked git",
                           "children": [
@@ -992,6 +996,10 @@
                               "vh": "simple-completion-language-server"
                             }
                           ]
+                        },
+                        {
+                          "gnx": "zxc.20260312205334.1",
+                          "vh": "remove cargo conf"
                         }
                       ]
                     },
@@ -2063,8 +2071,10 @@
     "zxc.20260222203819.1": "- names\n",
     "zxc.20260312204932.1": "- name: Remove pip config\n  ansible.windows.win_file:\n    path: \"{{ ansible_facts.env.APPDATA }}\\\\.pip\\\\pip.ini\"\n    state: absent",
     "zxc.20260214133505.1": "- name: Add cargo bin path to PATH\n  tags: path\n  ansible.windows.win_path:\n    state: present\n    scope: user\n    elements: '%userprofile%\\.cargo\\bin'\n",
+    "zxc.20260312205223.1": "- name: Set cargo config\n  ansible.windows.win_copy:\n    dest: \"{{ ansible_facts.user_dir }}\\\\.cargo\\\\config.toml\"\n    content: |\n      [source.crates-io]\n      replace-with = 'mirror'\n\n      [source.mirror]\n      registry = \"sparse+https://mirrors.cernet.edu.cn/crates.io-index/\"\n\n      [registries.mirror]\n      index = \"sparse+https://mirrors.cernet.edu.cn/crates.io-index/\"",
     "zxc.20260214134044.1": "- name: Install cargo packages\n  tags: cargo-install\n  ansible.windows.win_shell: \"cargo install --locked --git {{ item }}\"\n  loop:\n    @others\n",
     "zxc.20260214134128.1": "- https://github.com/estin/simple-completion-language-server.git\n",
+    "zxc.20260312205334.1": "- name: Remove pip config\n  ansible.windows.win_file:\n    path: \"{{ ansible_facts.user_dir }}\\\\.cargo\\\\config.toml\"\n    state: absent",
     "zxc.20260216182729.1": "- name: Install npm packages\n  tags: npm\n  ansible.windows.win_shell: npm install -g \"{{ item }}\"\n  loop:\n    @others\n",
     "zxc.20260216191851.1": "- prettier\n",
     "zxc.20260216191908.1": "- vscode-langservers-extracted\n",
@@ -2242,7 +2252,7 @@
   },
   "uas": {
     "zxc.20260121205603.1": {
-      "_mod_time": 1773319828.257
+      "_mod_time": 1773320054.199
     },
     "zxc.20260301130922.1": {
       "_mod_time": 1773102893.662
