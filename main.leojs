@@ -1865,8 +1865,8 @@
     "zxc.20260126223217.2": "- gimp\n- gpg4win\n",
     "zxc.20260125024431.1": "- name: Install init packages via scoop\n  tags: admin-scoop-init\n  community.windows.win_scoop:\n    name: '{{ item }}'\n    global: false\n    no_cache: true\n  register: result\n  retries: 3\n  delay: 5\n  until: result is not failed\n  loop:\n    - git",
     "zxc.20260126215320.1": "- name: WSL\n  tags: wsl\n  block:\n    @others",
-    "zxc.20260126215328.1": "- name: Enable Virtual Machine Platform\n  ansible.windows.win_optional_feature:\n    name: VirtualMachinePlatform\n    state: present\n  register: vmp_status\n- name: Enable hyper-v\n  ansible.windows.win_shell: bcdedit /set hypersivoralaunchtype auto\n  when: vmp_status is failed\n- name: Reboot for hyper-v\n  ansible.windows.win_reboot:\n  when: vmp_status is failed\n- name: Enable Virtual Machine Platform again\n  ansible.windows.win_optional_feature:\n    name: VirtualMachinePlatform\n    state: present\n  register: vmp_status\n  when: vmp_status is failed\n- name: Install Microsoft Subsystem for Linux\n  ansible.windows.win_optional_feature:\n    name: Microsoft-Windows-Subsystem-Linux\n    state: present\n  register: wsl_status\n",
-    "zxc.20260126215348.1": "- name: Reboot if installing Linux Subsytem as feature requires it\n  ansible.windows.win_reboot:\n  when: wsl_status.reboot_required or vmp_status.reboot_required",
+    "zxc.20260126215328.1": "- name: Enable Virtual Machine Platform\n  ansible.windows.win_optional_feature:\n    name: VirtualMachinePlatform\n    state: present\n  register: vmp_status\n- name: Enable hyper-v\n  ansible.windows.win_shell: bcdedit /set hypersivoralaunchtype auto\n  when: vmp_status is failed\n- name: Reboot for hyper-v\n  ansible.windows.win_reboot:\n  when: vmp_status is failed\n- name: Enable Virtual Machine Platform again\n  ansible.windows.win_optional_feature:\n    name: VirtualMachinePlatform\n    state: present\n  register: vmp_again_status\n  when: vmp_status is failed\n- name: Install Microsoft Subsystem for Linux\n  ansible.windows.win_optional_feature:\n    name: Microsoft-Windows-Subsystem-Linux\n    state: present\n  register: wsl_status\n",
+    "zxc.20260126215348.1": "- name: Reboot if installing Linux Subsytem as feature requires it\n  ansible.windows.win_reboot:\n  when: wsl_status.reboot_required or vmp_status.reboot_required or (vmp_again_status.reboot_required is defined and vmp_again_status.reboot_required)",
     "zxc.20260128212532.1": "- name: Hide admin account\n  tags: hide-admin\n  ansible.windows.win_regedit:\n    path: HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\SpecialAccounts\\UserList\n    type: dword\n    name: Admin\n    data: 0\n",
     "zxc.20260213005645.1": "- name: Set user groups\n  tags: user-admin\n  ansible.windows.win_user:\n    name: User\n    state: present\n    groups:\n      - Users\n",
     "zxc.20260214221021.1": "- name: Start ssh-agent service\n  tags: ssh-agent\n  ansible.windows.win_service:\n    name: ssh-agent\n    state: stopped\n    start_mode: disabled\n",
@@ -2218,7 +2218,7 @@
   },
   "uas": {
     "zxc.20260121205603.1": {
-      "_mod_time": 1773242941.619
+      "_mod_time": 1773275219.577
     },
     "zxc.20260301130922.1": {
       "_mod_time": 1773102893.662
@@ -2236,7 +2236,7 @@
       "_mod_time": 1773102893.662
     },
     "zxc.20260126204754.1": {
-      "_mod_time": 1773245021.187
+      "_mod_time": 1773274328.734
     }
   }
 }
