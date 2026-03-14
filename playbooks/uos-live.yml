@@ -1,0 +1,152 @@
+---
+# disable power saving
+# enable password ssh login and start ssh
+# change uos password, current password is emtpy
+# ssh-copy-id
+- name: Install uos
+  hosts: work
+  vars:
+    device: sda
+    mount_root: /mnt
+  tasks:
+    - name: Debug variables
+      ansible.builtin.debug:
+        var: ansible_facts
+    - name: Wipe all
+      tags: wipe_disk
+      become: true
+      block:
+        - name: Get partition info
+          community.general.parted:
+            device: "/dev/{{ device }}"
+            unit: MiB
+          register: disk_info
+        - name: Umount all partitions
+          ansible.builtin.command: "umount /dev/{{ device }}{{ item.num }}"
+          ignore_errors: true
+          loop: "{{ disk_info.partitions }}"
+        - name: Delete all partitions
+          community.general.parted:
+            device: "/dev/{{ device }}"
+            number: "{{ item.num }}"
+            state: absent
+          loop: "{{ disk_info.partitions }}"
+    - name: Create partions
+      become: true
+      block:
+        - name: Create boot part
+          community.general.parted:
+            device: "/dev/{{ device }}"
+            number: 1
+            fs_type: fat32
+            label: gpt
+            name: boot
+            part_start: "{{ 2 }}MiB"
+            part_end: "{{ 2 + 512 }}MiB"
+            state: present
+        - name: Create swap part
+          community.general.parted:
+            device: "/dev/{{ device }}"
+            number: 2
+            fs_type: linux-swap
+            label: gpt
+            name: swap
+            part_start: "{{ 2 + 512 }}MiB"
+            part_end: "{{ 2 + 512 + 1024 * 4 }}MiB"
+            state: present
+        - name: Create root part
+          community.general.parted:
+            device: "/dev/{{ device }}"
+            number: 3
+            fs_type: btrfs
+            label: gpt
+            name: Rootb
+            part_start: "{{ 2 + 512 + 1024 * 4 }}MiB"
+            state: present
+    - name: Create partions
+      become: true
+      block:
+        - name: Format boot part
+          community.general.filesystem:
+            device: "/dev/{{ device }}1"
+            fstype: vfat
+        - name: Format swap part
+          community.general.filesystem:
+            device: "/dev/{{ device }}2"
+            fstype: swap
+        - name: Format root part
+          community.general.filesystem:
+            device: "/dev/{{ device }}3"
+            fstype: btrfs
+            force: true
+    - name: Mount other partitions
+      become: true
+      block:
+        - name: Mount boot
+          ansible.posix.mount:
+            src: "/dev/{{ device }}1"
+            path: "{{ mount_root }}/boot/efi"
+            opts: rw,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro
+            fstype: vfat
+            state: mounted
+            passno: 2
+        - name: Mount root
+          ansible.posix.mount:
+            src: "/dev/{{ device }}3"
+            path: "{{ mount_root }}"
+            opts: rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/
+            fstype: btrfs
+            state: mounted
+    - name: Copy rootfs to roota
+      become: true
+      changed_when: true
+      ansible.builtin.command: "unsquashfs -d {{ mount_root }} -f /run/live/medium/live/filesystem.squashfs"
+    - name: Save to fstab
+      become: true
+      block:
+        - name: Write boot to fstab
+          ansible.posix.mount:
+            src: "/dev/{{ device }}1"
+            path: /boot/efi
+            opts: rw,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro
+            fstype: vfat
+            state: present
+            fstab: "{{ mount_root }}/etc/fstab"
+            passno: 2
+        - name: Write swap to fstab
+          ansible.posix.mount:
+            src: "/dev/{{ device }}2"
+            path: none
+            opts: defaults
+            fstype: swap
+            state: present
+            fstab: "{{ mount_root }}/etc/fstab"
+        - name: Save root to fstab
+          ansible.posix.mount:
+            src: "/dev/{{ device }}3"
+            path: /
+            opts: rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/
+            fstype: btrfs
+            state: present
+            fstab: "{{ mount_root }}/etc/fstab"
+        - name: Write tmp to fstab
+          ansible.posix.mount:
+            src: tmpfs
+            path: /tmp
+            opts: defaults,nosuid,nodev
+            fstype: tmpfs
+            state: present
+            fstab: "{{ mount_root }}/etc/fstab"
+    - name: Copy resolv.conf
+      become: true
+      ansible.builtin.copy:
+        src: /etc/resolv.conf
+        dest: "{{ mount_root }}/etc/resolv.conf"
+        mode: "0644"
+        remote_src: true
+    - name: Set hostname
+      become: true
+      ansible.builtin.copy:
+        dest: "{{ mount_root }}/etc/hostname"
+        content: "{{ ansible_facts.nodename }}"
+        mode: "0644"

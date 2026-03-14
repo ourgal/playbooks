@@ -114,6 +114,24 @@
               "vh": "<< config >>"
             }
           ]
+        },
+        {
+          "gnx": "zxc.20260314124706.1",
+          "vh": "chroot",
+          "children": [
+            {
+              "gnx": "zxc.20260314124706.2",
+              "vh": "chroot script"
+            },
+            {
+              "gnx": "zxc.20260314124706.3",
+              "vh": "run script"
+            },
+            {
+              "gnx": "zxc.20260314124706.4",
+              "vh": "remove script"
+            }
+          ]
         }
       ]
     },
@@ -1822,6 +1840,128 @@
               ]
             }
           ]
+        },
+        {
+          "gnx": "zxc.20260313221129.1",
+          "vh": "uos live",
+          "children": [
+            {
+              "gnx": "zxc.20260313221159.1",
+              "vh": "@clean uos-live.yml",
+              "children": [
+                {
+                  "gnx": "zxc.20260314005712.1",
+                  "vh": "<< vars >>"
+                },
+                {
+                  "gnx": "zxc.20260313221253.1",
+                  "vh": "facts"
+                },
+                {
+                  "gnx": "zxc.20260313231220.1",
+                  "vh": "delete all partitions",
+                  "children": [
+                    {
+                      "gnx": "zxc.20260313234643.1",
+                      "vh": "get info"
+                    },
+                    {
+                      "gnx": "zxc.20260313234730.1",
+                      "vh": "unmount all"
+                    },
+                    {
+                      "gnx": "zxc.20260313234721.1",
+                      "vh": "delete all"
+                    }
+                  ]
+                },
+                {
+                  "gnx": "zxc.20260313235313.1",
+                  "vh": "create partitions",
+                  "children": [
+                    {
+                      "gnx": "zxc.20260313235346.1",
+                      "vh": "boot"
+                    },
+                    {
+                      "gnx": "zxc.20260313235849.1",
+                      "vh": "swap"
+                    },
+                    {
+                      "gnx": "zxc.20260314000026.1",
+                      "vh": "root"
+                    }
+                  ]
+                },
+                {
+                  "gnx": "zxc.20260314000320.1",
+                  "vh": "format partitions",
+                  "children": [
+                    {
+                      "gnx": "zxc.20260314000320.2",
+                      "vh": "boot"
+                    },
+                    {
+                      "gnx": "zxc.20260314000320.3",
+                      "vh": "swap"
+                    },
+                    {
+                      "gnx": "zxc.20260314000320.4",
+                      "vh": "root"
+                    }
+                  ]
+                },
+                {
+                  "gnx": "zxc.20260314000917.1",
+                  "vh": "mount partitions",
+                  "children": [
+                    {
+                      "gnx": "zxc.20260314001406.1",
+                      "vh": "mount boot"
+                    },
+                    {
+                      "gnx": "zxc.20260314001037.1",
+                      "vh": "mount root"
+                    }
+                  ]
+                },
+                {
+                  "gnx": "zxc.20260314002337.1",
+                  "vh": "copy rootfs"
+                },
+                {
+                  "gnx": "zxc.20260314002444.1",
+                  "vh": "save to fatab",
+                  "children": [
+                    {
+                      "gnx": "zxc.20260314002518.1",
+                      "vh": "save boot to fstab"
+                    },
+                    {
+                      "gnx": "zxc.20260314002522.1",
+                      "vh": "save swap to fstab"
+                    },
+                    {
+                      "gnx": "zxc.20260314002512.1",
+                      "vh": "save root to fstab"
+                    },
+                    {
+                      "gnx": "zxc.20260314002525.1",
+                      "vh": "save tmp to fstab"
+                    }
+                  ]
+                },
+                {
+                  "gnx": "zxc.20260314011050.1",
+                  "vh": "copy resolv.conf"
+                },
+                {
+                  "gnx": "zxc.20260314024323.1",
+                  "vh": "hostname"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -1911,6 +2051,10 @@
     "zxc.20260126184021.5": "- name: Update chezmoi\n  ansible.windows.win_shell: C:\\\\ProgramData\\\\scoop\\\\shims\\\\chezmoi update\n",
     "zxc.20260212194835.1": "- name: Update scoop config\n  tags: scoop-config\n  block:\n    - name: Facts\n      ansible.builtin.gather_facts:\n      when: ansible_facts is not defined\n    - name: Check scoop config file\n      ansible.windows.win_stat:\n        path: \"{{ ansible_facts.user_dir }}\\\\.config\\\\scoop\\\\config.json\"\n      register: scoop_config_stat\n    - name: Get scoop config content\n      ansible.windows.slurp:\n        src: \"{{ ansible_facts.user_dir }}\\\\.config\\\\scoop\\\\config.json\"\n      register: scoop_config_content\n      when: scoop_config_stat.stat.exists is true\n    - name: Set scoop config\n      vars:\n        << config >>\n      ansible.windows.win_copy:\n        dest: \"{{ ansible_facts.user_dir }}\\\\.config\\\\scoop\\\\config.json\"\n        content: \"{{ scoop_config_content.content | b64decode | from_json | combine(config) | to_json }}\"\n      when: scoop_config_stat.stat.exists is true\n    - name: Set scoop config\n      vars:\n        << config >>\n      ansible.windows.win_copy:\n        dest: \"{{ ansible_facts.user_dir }}\\\\.config\\\\scoop\\\\config.json\"\n        content: \"{{ config | to_json }}\"\n      when: scoop_config_stat.stat.exists is false",
     "zxc.20260212194835.2": "config:\n  cat_style: auto\n  show_manifest: true\n",
+    "zxc.20260314124706.1": "- name: Chroot\n  tags: chroot\n  become: true\n  block:\n    @others",
+    "zxc.20260314124706.2": "- name: Create chroot script\n  ansible.builtin.copy:\n    dest: \"{{ mount_root }}/script\"\n    content: |\n      set -euo pipefail\n      grub-install --target={{ ansible_facts.architecture }}-efi --efi-directory=/boot/efi --bootloader-id=\"UOS\"\n      update-grub\n    mode: \"0644\"\n",
+    "zxc.20260314124706.3": "- name: Run chroot script\n  environment:\n    LANG: C.UTF-8\n  ansible.builtin.shell:\n    cmd: |\n      fail() {\n              printf '%s\\n' \"$1\" >&2\n              exit 1\n      }\n\n      CHROOT={{ mount_root }}\n\n      [ -d \"$CHROOT\" ] || fail 'not a directory'\n      [ -d \"$CHROOT/dev\" ] || fail 'no /dev in chroot'\n      [ -d \"$CHROOT/proc\" ] || fail 'no /proc in chroot'\n      [ -d \"$CHROOT/sys\" ] || fail 'no /sys in chroot'\n\n      for _fs in dev proc sys; do\n              mount --rbind \"/$_fs\" \"$CHROOT/$_fs\"\n              mount --make-rslave \"$CHROOT/$_fs\"\n      done\n\n      cleanup() {\n              umount -R \"$CHROOT/dev\" \"$CHROOT/proc\" \"$CHROOT/sys\"\n      }\n\n      trap cleanup EXIT INT\n\n      chroot \"$CHROOT\" /bin/bash /script\n  changed_when: true\n",
+    "zxc.20260314124706.4": "- name: Remove script\n  ansible.builtin.file:\n    path: \"{{ mount_root }}/script\"\n    state: absent\n",
     "zxc.20260121205603.1": "---\n@others\n",
     "zxc.20260125024248.1": "- name: Configure windows admin\n  hosts: windows\n  remote_user: admin\n  ignore_unreachable: true\n  tags: admin\n  tasks:\n    @others\n  handlers:\n    << handlers >>\n",
     "zxc.20260219201707.1": "- name: Reboot\n  ansible.windows.win_reboot:\n",
@@ -2266,6 +2410,32 @@
     "zxc.20260223210417.1": "- copyparty",
     "zxc.20260223210420.1": "- mdformat",
     "zxc.20260223210412.1": "- advance-touch",
+    "zxc.20260313221159.1": "@language yaml\n---\n@\ndisable power saving\nenable password ssh login and start ssh\nchange uos password, current password is emtpy\nssh-copy-id\n@c\n- name: Install uos\n  hosts: work\n  vars:\n    << vars >>\n  tasks:\n    @others\n",
+    "zxc.20260314005712.1": "device: sda\nmount_root: /mnt",
+    "zxc.20260313221253.1": "- name: Debug variables\n  ansible.builtin.debug:\n    var: ansible_facts\n",
+    "zxc.20260313231220.1": "- name: Wipe all\n  tags: wipe_disk\n  become: true\n  block:\n    @others",
+    "zxc.20260313234643.1": "- name: Get partition info\n  community.general.parted:\n    device: \"/dev/{{ device }}\"\n    unit: MiB\n  register: disk_info",
+    "zxc.20260313234730.1": "- name: Umount all partitions\n  ansible.builtin.command: \"umount /dev/{{ device }}{{ item.num }}\"\n  ignore_errors: true\n  loop: \"{{ disk_info.partitions }}\"",
+    "zxc.20260313234721.1": "- name: Delete all partitions\n  community.general.parted:\n    device: \"/dev/{{ device }}\"\n    number: \"{{ item.num }}\"\n    state: absent\n  loop: \"{{ disk_info.partitions }}\"",
+    "zxc.20260313235313.1": "- name: Create partions\n  become: true\n  block:\n    @others",
+    "zxc.20260313235346.1": "- name: Create boot part\n  community.general.parted:\n    device: \"/dev/{{ device }}\"\n    number: 1\n    fs_type: fat32\n    label: gpt\n    name: boot\n    part_start: \"{{ 2 }}MiB\"\n    part_end: \"{{ 2 + 512 }}MiB\"\n    state: present",
+    "zxc.20260313235849.1": "- name: Create swap part\n  community.general.parted:\n    device: \"/dev/{{ device }}\"\n    number: 2\n    fs_type: linux-swap\n    label: gpt\n    name: swap\n    part_start: \"{{ 2 + 512 }}MiB\"\n    part_end: \"{{ 2 + 512 + 1024 * 4 }}MiB\"\n    state: present",
+    "zxc.20260314000026.1": "- name: Create root part\n  community.general.parted:\n    device: \"/dev/{{ device }}\"\n    number: 3\n    fs_type: btrfs\n    label: gpt\n    name: Rootb\n    part_start: \"{{ 2 + 512 + 1024 * 4 }}MiB\"\n    state: present",
+    "zxc.20260314000320.1": "- name: Create partions\n  become: true\n  block:\n    @others",
+    "zxc.20260314000320.2": "- name: Format boot part\n  community.general.filesystem:\n    device: \"/dev/{{ device }}1\"\n    fstype: vfat\n",
+    "zxc.20260314000320.3": "- name: Format swap part\n  community.general.filesystem:\n    device: \"/dev/{{ device }}2\"\n    fstype: swap\n",
+    "zxc.20260314000320.4": "- name: Format root part\n  community.general.filesystem:\n    device: \"/dev/{{ device }}3\"\n    fstype: btrfs\n    force: true\n",
+    "zxc.20260314000917.1": "- name: Mount other partitions\n  become: true\n  block:\n    @others",
+    "zxc.20260314001406.1": "- name: Mount boot\n  ansible.posix.mount:\n    src: \"/dev/{{ device }}1\"\n    path: \"{{ mount_root }}/boot/efi\"\n    opts: rw,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro\n    fstype: vfat\n    state: mounted\n    passno: 2\n",
+    "zxc.20260314001037.1": "- name: Mount root\n  ansible.posix.mount:\n    src: \"/dev/{{ device }}3\"\n    path: \"{{ mount_root }}\"\n    opts: rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/\n    fstype: btrfs\n    state: mounted\n",
+    "zxc.20260314002337.1": "- name: Copy rootfs to roota\n  become: true\n  changed_when: true\n  ansible.builtin.command: \"unsquashfs -d {{ mount_root }} -f /run/live/medium/live/filesystem.squashfs\"\n",
+    "zxc.20260314002444.1": "- name: Save to fstab\n  become: true\n  block:\n    @others",
+    "zxc.20260314002518.1": "- name: Write boot to fstab\n  ansible.posix.mount:\n    src: \"/dev/{{ device }}1\"\n    path: /boot/efi\n    opts: rw,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro\n    fstype: vfat\n    state: present\n    fstab: \"{{ mount_root }}/etc/fstab\"\n    passno: 2\n",
+    "zxc.20260314002522.1": "- name: Write swap to fstab\n  ansible.posix.mount:\n    src: \"/dev/{{ device }}2\"\n    path: none\n    opts: defaults\n    fstype: swap\n    state: present\n    fstab: \"{{ mount_root }}/etc/fstab\"\n",
+    "zxc.20260314002512.1": "- name: Save root to fstab\n  ansible.posix.mount:\n    src: \"/dev/{{ device }}3\"\n    path: /\n    opts: rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvol=/\n    fstype: btrfs\n    state: present\n    fstab: \"{{ mount_root }}/etc/fstab\"\n",
+    "zxc.20260314002525.1": "- name: Write tmp to fstab\n  ansible.posix.mount:\n    src: tmpfs\n    path: /tmp\n    opts: defaults,nosuid,nodev\n    fstype: tmpfs\n    state: present\n    fstab: \"{{ mount_root }}/etc/fstab\"\n",
+    "zxc.20260314011050.1": "- name: Copy resolv.conf\n  become: true\n  ansible.builtin.copy:\n    src: /etc/resolv.conf\n    dest: \"{{ mount_root }}/etc/resolv.conf\"\n    mode: \"0644\"\n    remote_src: true",
+    "zxc.20260314024323.1": "- name: Set hostname\n  become: true\n  ansible.builtin.copy:\n    dest: \"{{ mount_root }}/etc/hostname\"\n    content: \"{{ ansible_facts.nodename }}\"\n    mode: \"0644\"",
     "zxc.20260126204754.1": "@others\n",
     "zxc.20260126221252.1": "[defaults]\n@others\n",
     "zxc.20260126221509.1": "gathering = smart\n",
@@ -2282,7 +2452,7 @@
   },
   "uas": {
     "zxc.20260121205603.1": {
-      "_mod_time": 1773325148.181
+      "_mod_time": 1773325148.1814733
     },
     "zxc.20260301130922.1": {
       "_mod_time": 1773102893.662
@@ -2298,6 +2468,9 @@
     },
     "zxc.20260223143337.1": {
       "_mod_time": 1773102893.662
+    },
+    "zxc.20260313221159.1": {
+      "_mod_time": 1773465242.529613
     },
     "zxc.20260126204754.1": {
       "_mod_time": 1773274328.734
